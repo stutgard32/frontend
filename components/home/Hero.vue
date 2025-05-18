@@ -6,7 +6,7 @@
       loop
       playsinline
       class="hero__video"
-      poster="/img/hero-poster.png"
+      poster="/img/hero-poster.webp"
     >
       <source src="https://fefew231.b-cdn.net/hero-home.mp4" type="video/mp4" />
       Ваш браузер не поддерживает видео фон.
