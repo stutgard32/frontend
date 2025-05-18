@@ -51,9 +51,9 @@ const map = shallowRef<null | YMap>(null)
   object-fit: cover;
   width: 70px;
   height: 70px;
-  @media screen and (max-width: 463px) {
-    width: 50px;
-    height: 50px;
+  @media screen and (max-width: 1280px) {
+    width: 55px;
+    height: 55px;
   }
 }
 .btn-map {
@@ -69,6 +69,14 @@ const map = shallowRef<null | YMap>(null)
   .btn-map {
     font-size: 12px;
     padding: 0 0;
+  }
+}
+.map {
+  @media screen and (max-width: 1024px) {
+    height: 350px !important;
+  }
+  @media screen and (max-width: 639px) {
+    height: 250px !important;
   }
 }
 </style>

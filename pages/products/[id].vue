@@ -21,5 +21,11 @@ const product = await useLoadData<'', Product[]>(apiProducts, {
 <style lang="scss" scoped>
 .products {
   padding: 53px 0 150px 0;
+  @media screen and (max-width: 1024px) {
+    padding: 53px 0 110px 0;
+  }
+  @media screen and (max-width: 639px) {
+    padding: 53px 0 40px 0;
+  }
 }
 </style>

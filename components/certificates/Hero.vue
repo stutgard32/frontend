@@ -32,6 +32,12 @@ import Image from 'primevue/image'
 <style scoped lang="scss">
 .certificates {
   padding: 53px 0 150px;
+  @media screen and (max-width: 1024px) {
+    padding: 53px 0 110px 0;
+  }
+  @media screen and (max-width: 639px) {
+    padding: 53px 0 40px 0;
+  }
   &__title {
     margin-bottom: 22px;
     color: #000;
@@ -41,6 +47,12 @@ import Image from 'primevue/image'
     font-weight: 500;
     line-height: 150%; /* 60px */
     letter-spacing: -1.2px;
+    @media screen and (max-width: 1280px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 24px;
+    }
   }
   &__items {
     display: flex;
@@ -57,11 +69,20 @@ import Image from 'primevue/image'
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
+    @media screen and (max-width: 1280px) {
+      font-size: 22px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 16px;
+    }
   }
   &__content {
     margin-bottom: 63px;
     width: 100%;
     max-width: 750px;
+    @media screen and (max-width: 875px) {
+      margin-bottom: 40px;
+    }
   }
   &__img {
     cursor: pointer;

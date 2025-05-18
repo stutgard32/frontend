@@ -5,7 +5,7 @@
       Ваш браузер не поддерживает видео фон.
     </video>
     <div class="hero__overlay"></div>
-    <Header class="hero__header" :colorHeader="'colorHeader'" />
+    <HeaderHome class="hero__header" :colorHeader="'colorHeader'" />
     <div class="hero__wrapper">
       <div class="container">
         <div class="hero__content">
@@ -20,11 +20,14 @@
         </div>
       </div>
     </div>
-    <Footer class="hero__footer" :colorFooter="'colorFooter'" />
+    <FooterHome class="hero__footer" :colorFooter="'colorFooter'" />
   </section>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import FooterHome from './FooterHome.vue'
+import HeaderHome from './HeaderHome.vue'
+</script>
 
 <style scoped lang="scss">
 .hero {
@@ -69,6 +72,12 @@
     font-weight: 700;
     line-height: 130%; /* 39px */
     color: #fff;
+    @media screen and (max-width: 1280px) {
+      font-size: 28px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 20px;
+    }
   }
   &__description {
     font-family: 'Stetica';
@@ -77,6 +86,12 @@
     font-weight: 500;
     line-height: 130%; /* 39px */
     color: #fff;
+    @media screen and (max-width: 1280px) {
+      font-size: 25px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 18px;
+    }
   }
   &__btn {
     padding: 15px 20px;
@@ -90,11 +105,17 @@
     line-height: 130%; /* 31.2px */
     text-decoration: none;
     text-align: center;
+    @media screen and (max-width: 1280px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 18px;
+    }
   }
-  &__header,
-  &__footer {
-    z-index: 2;
-  }
+  // &__header,
+  // &__footer {
+  //   z-index: 1!;
+  // }
 }
 </style>
 <style>

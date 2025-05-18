@@ -1,37 +1,35 @@
 <template>
-  <footer :class="['footer', colorBackgroundFooter]">
+  <footer :class="'footer'">
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__left">
-          <a :class="['footer__link', colorFooter]" href="/" target="_blank"
+          <a class="footer__link" href="/" target="_blank"
             >Политика конфиденциальности</a
           >
-          <a :class="['footer__link', colorFooter]" href="/" target="_blank"
+          <a class="footer__link" href="/" target="_blank"
             >Пользовательское соглашение</a
           >
         </div>
         <div class="footer__right">
           <ul class="list-reset footer__list">
             <li class="footer__item">
-              <a :class="['footer__cont', colorFooter]" href="tel:88432121700"
+              <a class="footer__cont" href="tel:88432121700"
                 >8(843) 212-17-00</a
               >
-              <a :class="['footer__cont', colorFooter]" href="tel:88432409584"
+              <a class="footer__cont" href="tel:88432409584"
                 >8(843) 240-95-84</a
               >
-              <a
-                :class="['footer__cont', colorFooter]"
-                href="mailto:info@st-av.ru"
+              <a class="footer__cont" href="mailto:info@st-av.ru"
                 >info@st-av.ru</a
               >
             </li>
           </ul>
           <ul class="list-reset footer__list">
             <li class="footer__item">
-              <p :class="['footer__cont', colorFooter]">
+              <p class="footer__cont">
                 г. Казань, ул. Побежимова, д. 55А, офис 401, 402, 403
               </p>
-              <p :class="['footer__cont', colorFooter]">9:00 - 18:00, Пн-Пт</p>
+              <p class="footer__cont">9:00 - 18:00, Пн-Пт</p>
             </li>
           </ul>
         </div>
@@ -40,20 +38,12 @@
   </footer>
 </template>
 
-<script lang="ts" setup>
-defineProps<{
-  colorFooter?: string
-  colorBackgroundFooter?: string
-}>()
-</script>
+<script lang="ts" setup></script>
 
 <style scoped lang="scss">
 .footer {
-  padding: 30px 0 30px 0;
-  @media screen and (max-width: 639px) {
-    background: #517da2;
-    padding: 30px 0 30px 0;
-  }
+  padding: 0 0 30px 0;
+  z-index: 2;
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -68,21 +58,19 @@ defineProps<{
     @media screen and (max-width: 1024px) {
       display: none;
     }
-    @media screen and (max-width: 639px) {
-      display: flex;
-      justify-content: space-between;
-    }
   }
   &__left {
     display: flex;
     align-items: flex-end;
     gap: 30px;
     @media screen and (max-width: 639px) {
-      display: none;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
     }
   }
   &__link {
-    color: #2b2b2b;
+    color: #ffffffde;
     font-family: 'Roboto';
     font-size: 16px;
     font-style: normal;
@@ -97,7 +85,7 @@ defineProps<{
   }
   &__cont {
     max-width: 300px;
-    color: #2b2b2b;
+    color: #ffffffde;
     font-family: 'Roboto';
     font-size: 20px;
     font-style: normal;
@@ -110,7 +98,7 @@ defineProps<{
     @media screen and (max-width: 639px) {
       color: #fff;
       font-size: 14px;
-      max-width: 192px;
+      max-width: 200px;
     }
     @media screen and (max-width: 380px) {
       font-size: 12px;

@@ -39,6 +39,9 @@ defineProps<{
     padding: 30px;
     border: 1px solid #517da2;
     background: rgba(217, 217, 217, 0);
+    @media screen and (max-width: 808px) {
+      padding: 15px;
+    }
   }
 }
 </style>

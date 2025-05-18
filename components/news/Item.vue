@@ -4,7 +4,7 @@
     <div class="item__wrap">
       <h1 class="item__title">{{ title }}</h1>
       <span class="item__date">{{ formattedDate }}</span>
-      <NuxtLink class="item__link" :to="`/new/${link}`">Подробнее</NuxtLink>
+      <NuxtLink class="item__link" :to="`/news/${link}`">Подробнее</NuxtLink>
     </div>
   </div>
 </template>
@@ -38,6 +38,9 @@ const formattedDate = computed(() => {
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
+    @media screen and (max-width: 1200px) {
+      font-size: 18px;
+    }
   }
   &__img {
     margin-bottom: 20px;
@@ -77,6 +80,9 @@ const formattedDate = computed(() => {
     background: linear-gradient(180deg, #517da2 83.02%, #fff 141.7%);
     text-decoration: none;
     z-index: 5;
+    @media screen and (max-width: 1200px) {
+      font-size: 20px;
+    }
   }
 }
 </style>

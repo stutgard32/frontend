@@ -48,7 +48,12 @@
 <style scoped lang="scss">
 .services {
   padding: 53px 0 150px 0;
-  min-height: 1500px;
+  @media screen and (max-width: 1024px) {
+    padding: 53px 0 110px 0;
+  }
+  @media screen and (max-width: 639px) {
+    padding: 53px 0 40px 0;
+  }
   &__title {
     margin-bottom: 30px;
     color: #000;
@@ -58,6 +63,12 @@
     font-weight: 500;
     line-height: 150%; /* 60px */
     letter-spacing: -1.2px;
+    @media screen and (max-width: 1280px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 24px;
+    }
   }
   &__content {
     margin-bottom: 50px;
@@ -69,6 +80,12 @@
     width: 100%;
     max-height: 900px;
     object-fit: cover;
+    @media screen and (max-width: 1280px) {
+      padding-left: 65px;
+    }
+    @media screen and (max-width: 639px) {
+      padding-left: 0;
+    }
   }
   &__subtitle {
     margin-bottom: 10px;
@@ -79,6 +96,12 @@
     font-weight: 500;
     line-height: 150%; /* 45px */
     letter-spacing: -0.9px;
+    @media screen and (max-width: 1280px) {
+      font-size: 22px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 18px;
+    }
   }
   &__description {
     margin-bottom: 20px;
@@ -89,6 +112,12 @@
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
+    @media screen and (max-width: 1280px) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 16px;
+    }
   }
 }
 </style>

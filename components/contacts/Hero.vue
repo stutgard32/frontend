@@ -6,7 +6,7 @@
       <ul class="list-reset hero__items">
         <li class="hero__item">
           <div class="hero__wrapper">
-            <img src="/svg/phone.svg" />
+            <img class="hero__icon" src="/svg/phone.svg" />
             <div class="hero__phone-wrapper">
               <a href="tel:88432121700" class="hero__link">8(843) 212-17-00</a>
               <a href="tel:88432409584" class="hero__link">8(843) 240-95-84</a>
@@ -15,7 +15,7 @@
         </li>
         <li class="hero__item">
           <div class="hero__img-wrapper">
-            <img src="/svg/mail.svg" /><a
+            <img class="hero__icon" src="/svg/mail.svg" /><a
               href="mailto:info@st-av.ru"
               class="hero__link"
               >info@st-av.ru</a
@@ -36,6 +36,12 @@
 <style scoped lang="scss">
 .hero {
   padding: 53px 0 150px 0;
+  @media screen and (max-width: 1024px) {
+    padding: 53px 0 110px 0;
+  }
+  @media screen and (max-width: 639px) {
+    padding: 53px 0 40px 0;
+  }
   &__title {
     margin-bottom: 28px;
     color: #000;
@@ -45,10 +51,25 @@
     font-weight: 500;
     line-height: 150%;
     letter-spacing: -1.2px;
+    @media screen and (max-width: 1280px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 24px;
+    }
+  }
+  &__icon {
+    @media screen and (max-width: 875px) {
+      width: 20px;
+      height: 20px;
+    }
   }
   &__wrapper {
     display: flex;
     gap: 15px;
+    @media screen and (max-width: 875px) {
+      align-items: center;
+    }
   }
   &__phone-wrapper {
     display: flex;
@@ -65,6 +86,17 @@
   &__items {
     display: flex;
     gap: 150px;
+    @media screen and (max-width: 1194px) {
+      gap: 120px;
+    }
+    @media screen and (max-width: 1024px) {
+      gap: 30px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 639px) {
+      flex-direction: column-reverse;
+    }
   }
   &__item {
     display: flex;
@@ -79,6 +111,12 @@
     font-weight: 500;
     line-height: 130%;
     text-decoration: none;
+    @media screen and (max-width: 1280px) {
+      font-size: 22px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 18px;
+    }
   }
 }
 </style>

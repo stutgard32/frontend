@@ -11,69 +11,75 @@ defineProps<{
 
 <template>
   <div
-    class="catalog__item"
+    class="catalogItem__item-inner"
     :class="{
-      'catalog__item--background': isBackground,
-      'catalog__item--hover': isBackground,
+      'catalogItem__item--background': isBackground,
+      'catalogItem__item--hover': isBackground,
     }"
-    :style="isBackground ? `background-image: url(${img})` : ''"
+    :style="
+      isBackground ? `background: url(${img}) center / cover no-repeat` : ''
+    "
   >
-    <div class="catalog__description">
-      <p class="catalog__text">{{ description }}</p>
+    <div class="catalogItem__description">
+      <p class="catalogItem__text">{{ description }}</p>
     </div>
-    <div class="catalog__content">
-      <h3 class="catalog__title" :class="{ catalog__color: isColor }">
+    <div class="catalogItem__content">
+      <h3 class="catalogItem__title" :class="{ catalogItem__color: isColor }">
         {{ title }}
       </h3>
-      <div v-if="!isBackground" class="catalog__img-wrapper">
-        <img class="catalog__img" :src="img" alt="img" />
+      <div v-if="!isBackground" class="catalogItem__img-wrapper">
+        <img class="catalogItem__img" :src="img" alt="img" />
       </div>
     </div>
-    <NuxtLink class="list-reset catalog__btn" :to="`/products/${link}`"
-      >Перейти в каталог</NuxtLink
-    >
+    <NuxtLink class="list-reset catalogItem__btn" :to="`/products/${link}`">
+      Перейти в каталог
+    </NuxtLink>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.catalog {
-  &__item {
-    position: relative;
+.catalogItem {
+  &__item-inner {
+    height: 100%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    min-height: 282px;
+    position: relative;
     border: 1px solid #517da2;
-    background: #fff;
+
     &--background {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      transition: all 0.3s ease-in-out;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      background-position: center !important;
+      transition: all 0.3s ease-in-out !important;
     }
-    &:hover .catalog__description {
+
+    &--hover:hover {
+      background-image: none !important;
+    }
+
+    &:hover .catalogItem__description {
       opacity: 1;
       transition: opacity 0.3s ease-in-out;
     }
-    &:hover .catalog__content {
+
+    &:hover .catalogItem__content {
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease-in-out;
     }
-    &--hover:hover {
-      background-image: none !important;
-    }
   }
+
   &__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 20px;
     transition: all 0.3s ease-in-out;
   }
-  &__color {
-    color: #fff !important;
-  }
+
   &__description {
     position: absolute;
     inset: 0;
@@ -85,48 +91,55 @@ defineProps<{
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: rgb(255, 255, 255); // добавь это
   }
+
   &__text {
-    color: #252525;
-    font-family: 'Roboto';
-    font-size: 20px;
-    font-style: normal;
+    font-size: 18px;
+    line-height: 150%;
     font-weight: 500;
-    line-height: 150%; /* 39px */
-    letter-spacing: -0.78px;
-  }
-  &__title {
-    padding: 20px 20px 0 20px;
-    margin-bottom: 30px;
     color: #252525;
-    font-family: 'Roboto';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%;
-  }
-  &__img {
-    width: 100%;
-    height: 100%;
-    &-wrapper {
-      margin-bottom: 30px;
-      padding: 0 20px 0 20px;
-      width: 100%;
-      max-height: 350px;
+    @media screen and (max-width: 1280px) {
     }
   }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    color: #252525;
+  }
+
+  &__color {
+    color: #fff !important;
+  }
+
+  &__img-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  &__img {
+    max-height: 180px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
   &__btn {
     padding: 14px 0;
     text-align: center;
-    color: #fdfdfd;
-    font-family: 'Roboto';
-    font-size: 24px;
-    font-style: normal;
+    font-size: 18px;
     font-weight: 500;
-    line-height: 130%;
     background: linear-gradient(180deg, #517da2 83.02%, #fff 141.7%);
+    color: #fff;
     text-decoration: none;
-    z-index: 5;
+    z-index: 1;
   }
 }
 </style>

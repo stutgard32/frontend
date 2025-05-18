@@ -1,27 +1,13 @@
 <template>
   <div class="container">
-    <div class="menu" v-if="menu">
-      <div class="menu__wrapper">
-        <img
-          class="menu__logo"
-          @click="openMenu"
-          src="/img/burger.png"
-          alt="logo"
-        />
-      </div>
-    </div>
-    <Transition name="slide">
-      <div
-        class="menu__wrapper-2"
-        :class="{ 'menu__wrapper-2-active': !menu }"
-        v-if="!menu"
-        @click.self="menu = true"
-      >
+    <div class="menu">
+      <div class="menu__wrapper-2">
         <div class="menu__wrapper-3">
-          <span class="menu__caption">Навигация по сайту</span>
-          <NuxtLink to="/" class="menu__title" @click="closeMenu"
-            >Главная</NuxtLink
-          >
+          <div class="menu__wrapper-4">
+            <span class="menu__caption">Навигация по сайту</span>
+            <img src="/img/close.png" class="menu__close" @click="closeMenu" />
+          </div>
+          <NuxtLink to="/" class="menu__title">Главная</NuxtLink>
           <NuxtLink to="/about" class="menu__title" @click="closeMenu"
             >О Компании</NuxtLink
           >
@@ -53,17 +39,15 @@
           >
         </div>
       </div>
-    </Transition>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const menu = ref(true)
-const openMenu = () => {
-  menu.value = !menu.value
-}
+const emit = defineEmits(['closeMenu'])
+
 const closeMenu = () => {
-  menu.value = true
+  emit('closeMenu')
 }
 
 const link1 = [
@@ -135,18 +119,7 @@ const link2 = [
 
 <style scoped lang="scss">
 .menu {
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 90px;
-  height: 100%;
-  background-color: #3f5d77;
-  z-index: 2000;
-  transition: transform 0.3s ease;
-  @media screen and (max-width: 1280px) {
-    width: 65px;
-  }
+  z-index: 999 !important;
   &__wrapper {
     display: flex;
     align-items: center;
@@ -161,13 +134,22 @@ const link2 = [
       height: 35px;
     }
   }
+  &__close {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    @media screen and (max-width: 1280px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
   &__wrapper-2 {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 10111111100;
   }
 
   &__wrapper-3 {
@@ -181,12 +163,20 @@ const link2 = [
     @media screen and (max-width: 1024px) {
       width: 250px;
     }
+    @media screen and (max-width: 639px) {
+      width: 100%;
+      background: #000c;
+    }
+  }
+  &__wrapper-4 {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
   }
   &__caption {
     width: 100%;
     display: inline-block;
     text-align: center;
-    margin-bottom: 30px;
     color: #b0b0b0;
     font-family: 'Roboto';
     font-size: 20px;
@@ -234,25 +224,5 @@ const link2 = [
     flex-direction: column;
     gap: 5px;
   }
-}
-.slide-enter-active,
-.slide-leave-active {
-  transition: transform 0.3s ease;
-}
-
-.slide-enter-from {
-  transform: translateX(-100%);
-}
-
-.slide-enter-to {
-  transform: translateX(0);
-}
-
-.slide-leave-from {
-  transform: translateX(0);
-}
-
-.slide-leave-to {
-  transform: translateX(-100%);
 }
 </style>

@@ -24,6 +24,9 @@ const listNews = await useLoadData<'', News[]>(apiNews, {
 <style scoped lang="scss">
 .news {
   padding: 53px 0 110px 0;
+  @media screen and (max-width: 639px) {
+    padding: 53px 0 40px 0;
+  }
   &__title {
     margin-bottom: 38px;
     color: #000;
@@ -33,6 +36,12 @@ const listNews = await useLoadData<'', News[]>(apiNews, {
     font-weight: 500;
     line-height: 150%; /* 60px */
     letter-spacing: -1.2px;
+    @media screen and (max-width: 1280px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 24px;
+    }
   }
   &__wrapper {
     width: 100%;

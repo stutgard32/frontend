@@ -29,6 +29,12 @@ defineProps<{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 875px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   &__item {
     border: 1px solid #517da2;

@@ -22,6 +22,12 @@
   padding: 0 0 0;
   &__wrapper {
     padding: 0 0 150px 0;
+    @media screen and (max-width: 1024px) {
+      padding: 0 0 110px 0;
+    }
+    @media screen and (max-width: 639px) {
+      padding: 0 0 95px 0;
+    }
   }
   &__adress {
     margin-bottom: 20px;
@@ -31,6 +37,15 @@
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
+    @media screen and (max-width: 1280px) {
+      font-size: 22px;
+    }
+    @media screen and (max-width: 875px) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 639px) {
+      max-width: 500px;
+    }
   }
   &__component {
     width: 100%;

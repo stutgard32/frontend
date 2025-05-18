@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CommonMenu />
+    <CommonMenu class="default__menu" />
     <Header />
     <slot />
     <Footer />
@@ -9,4 +9,10 @@
 
 <script lang="ts" setup></script>
 
-<style></style>
+<style lang="scss">
+.default__menu {
+  @media screen and (max-width: 639px) {
+    display: none;
+  }
+}
+</style>
