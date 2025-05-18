@@ -29,7 +29,7 @@ const catalogList = await useLoadData<'', Catalog[]>(apiCatalog, {
 .catalog {
   padding-top: 53px;
   &__title {
-    margin-bottom: 23px;
+    margin-bottom: 22px;
     color: #000;
     font-family: 'Stetica';
     font-size: 40px;
