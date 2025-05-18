@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="container">
       <h1 class="hero__title">Контакты</h1>
-      <img class="hero__img" src="/img/contacts-hero.png" />
+      <img class="hero__img" src="/img/contacts-hero.webp" />
       <ul class="list-reset hero__items">
         <li class="hero__item">
           <div class="hero__wrapper">

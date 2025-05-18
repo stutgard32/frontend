@@ -5,7 +5,7 @@
       Ваш браузер не поддерживает видео фон.
     </video>
     <picture class="hero__overlay">
-      <img class="hero__image" src="/img/hero-home-1024.png" alt="Hero" />
+      <img class="hero__image" src="/img/hero-home-1024.webp" alt="Hero" />
     </picture>
     <div class="hero__overlay"></div>
     <HeaderHome class="hero__header" :colorHeader="'colorHeader'" />

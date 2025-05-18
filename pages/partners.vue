@@ -18,22 +18,22 @@
       </div>
       <div class="partners__items">
         <Vue3Marquee>
-          <img src="/img/partners-img-1.png" alt="img" />
-          <img src="/img/partners-img-2.png" alt="img" />
-          <img src="/img/partners-img-3.png" alt="img" />
-          <img src="/img/partners-img-4.png" alt="img" />
+          <img src="/img/partners-img-1.webp" alt="img" />
+          <img src="/img/partners-img-2.webp" alt="img" />
+          <img src="/img/partners-img-3.webp" alt="img" />
+          <img src="/img/partners-img-4.webp" alt="img" />
         </Vue3Marquee>
         <Vue3Marquee direction="reverse">
-          <img src="/img/partners-img-5.png" alt="img" />
-          <img src="/img/partners-img-6.png" alt="img" />
-          <img src="/img/partners-img-7.png" alt="img" />
-          <img src="/img/partners-img-8.png" alt="img" />
+          <img src="/img/partners-img-5.webp" alt="img" />
+          <img src="/img/partners-img-6.webp" alt="img" />
+          <img src="/img/partners-img-7.webp" alt="img" />
+          <img src="/img/partners-img-8.webp" alt="img" />
         </Vue3Marquee>
         <Vue3Marquee>
-          <img src="/img/partners-img-9.png" alt="img" />
-          <img src="/img/partners-img-10.png" alt="img" />
-          <img src="/img/partners-img-11.png" alt="img" />
-          <img src="/img/partners-img-12.png" alt="img" />
+          <img src="/img/partners-img-9.webp" alt="img" />
+          <img src="/img/partners-img-10.webp" alt="img" />
+          <img src="/img/partners-img-11.webp" alt="img" />
+          <img src="/img/partners-img-12.webp" alt="img" />
         </Vue3Marquee>
       </div>
       <h2 class="partners__title">Наши парнеры</h2>
@@ -49,40 +49,40 @@
 <script lang="ts" setup>
 const items = [
   {
-    img: '/img/partners-img-1.png',
+    img: '/img/partners-img-1.webp',
   },
   {
-    img: '/img/partners-img-2.png',
+    img: '/img/partners-img-2.webp',
   },
   {
-    img: '/img/partners-img-3.png',
+    img: '/img/partners-img-3.webp',
   },
   {
-    img: '/img/partners-img-4.png',
+    img: '/img/partners-img-4.webp',
   },
   {
-    img: '/img/partners-img-5.png',
+    img: '/img/partners-img-5.webp',
   },
   {
-    img: '/img/partners-img-6.png',
+    img: '/img/partners-img-6.webp',
   },
   {
-    img: '/img/partners-img-7.png',
+    img: '/img/partners-img-7.webp',
   },
   {
-    img: '/img/partners-img-8.png',
+    img: '/img/partners-img-8.webp',
   },
   {
-    img: '/img/partners-img-9.png',
+    img: '/img/partners-img-9.webp',
   },
   {
-    img: '/img/partners-img-10.png',
+    img: '/img/partners-img-10.webp',
   },
   {
-    img: '/img/partners-img-11.png',
+    img: '/img/partners-img-11.webp',
   },
   {
-    img: '/img/partners-img-12.png',
+    img: '/img/partners-img-12.webp',
   },
 ]
 </script>

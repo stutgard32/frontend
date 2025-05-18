@@ -6,7 +6,7 @@
         Работаем с крупнейшими промышленными организациями на территерии РФ
       </p>
     </div>
-    <img class="geography__img" src="/img/geography-img.png" alt="img" />
+    <img class="geography__img" src="/img/geography-img.webp" alt="img" />
     <div class="container">
       <div class="geography__wrapper">
         <ul class="list-reset geography__list">

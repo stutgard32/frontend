@@ -74,6 +74,9 @@ const htmlSpecifications = computed(() =>
     }
   }
   &__img {
+    width: 100%;
+    max-width: 290px;
+    height: auto;
     border: 1px solid #517da2;
     padding: 20px 100px;
     @media screen and (max-width: 1024px) {

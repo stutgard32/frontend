@@ -4,7 +4,7 @@
       <h1 class="services__title">Услуги</h1>
     </div>
     <div class="services__content">
-      <img class="services__img" src="/img/services.png" alt="img" />
+      <img class="services__img" src="/img/services.webp" alt="img" />
     </div>
     <div class="container">
       <h2 class="services__subtitle">Сервис и техническое обслуживание</h2>
