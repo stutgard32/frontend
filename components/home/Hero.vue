@@ -4,6 +4,9 @@
       <source src="/video/hero-home.mp4" type="video/mp4" />
       Ваш браузер не поддерживает видео фон.
     </video>
+    <picture class="hero__overlay">
+      <img class="hero__image" src="/img/hero-home-1024.png" alt="Hero" />
+    </picture>
     <div class="hero__overlay"></div>
     <HeaderHome class="hero__header" :colorHeader="'colorHeader'" />
     <div class="hero__wrapper">
@@ -45,6 +48,9 @@ import HeaderHome from './HeaderHome.vue'
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
   }
   &__overlay {
     position: absolute;
@@ -64,6 +70,19 @@ import HeaderHome from './HeaderHome.vue'
     flex-direction: column;
     gap: 25px;
     align-items: flex-start;
+  }
+  &__overlay {
+    display: none;
+    @media screen and (max-width: 1024px) {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   &__title {
     font-family: 'Stetica';
