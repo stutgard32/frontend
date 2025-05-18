@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <video autoplay muted loop playsinline class="hero__video">
-      <source src="/video/hero-home.mp4" type="video/mp4" />
+      <source src="https://fefew231.b-cdn.net/hero-home.mp4" type="video/mp4" />
       Ваш браузер не поддерживает видео фон.
     </video>
     <picture class="hero__overlay">
