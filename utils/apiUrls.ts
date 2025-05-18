@@ -1,3 +1,3 @@
-export const apiCatalog = 'api/catalogs'
-export const apiProducts = 'api/products'
-export const apiNews = 'api/news'
+export const apiCatalog = '/catalogs'
+export const apiProducts = '/products'
+export const apiNews = '/news'
