@@ -142,6 +142,7 @@ const activeMenu = () => {
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+    margin-right: 0px;
     @media screen and (max-width: 1024px) {
       display: none;
     }
