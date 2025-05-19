@@ -3,7 +3,6 @@ import type { YMap } from '@yandex/ymaps3-types'
 import { shallowRef } from 'vue'
 import {
   YandexMap,
-  YandexMapControls,
   YandexMapDefaultFeaturesLayer,
   YandexMapDefaultSchemeLayer,
   YandexMapMarker,
@@ -33,14 +32,6 @@ const map = shallowRef<null | YMap>(null)
     >
       <img class="pin" src="/img/marker.png" alt="" />
     </yandex-map-marker>
-    <yandex-map-controls
-      :settings="{
-        position: 'bottom left',
-        orientation: 'vertical',
-      }"
-    >
-      <button class="btn-reset btn-map">111</button>
-    </yandex-map-controls>
   </yandex-map>
 </template>
 
