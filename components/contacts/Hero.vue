@@ -1,6 +1,7 @@
 <template>
-  <section class="hero">
+  <div class="hero">
     <div class="container">
+      <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
       <h1 class="hero__title">Контакты</h1>
       <img class="hero__img" src="/img/contacts-hero.webp" />
       <ul class="list-reset hero__items">
@@ -28,10 +29,17 @@
         </li>
       </ul>
     </div>
-  </section>
+  </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'Контакты', path: '/contacts', isActive: true },
+  ]
+})
+</script>
 
 <style scoped lang="scss">
 .hero {

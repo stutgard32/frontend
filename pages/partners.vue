@@ -1,6 +1,7 @@
 <template>
   <section class="partners">
     <div class="container">
+      <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
       <h1 class="partners__title">Наши заказчики</h1>
       <p class="partners__description">
         Нам доверяют крупнейшие производственны и нефтеперерабатывающие заводы
@@ -47,6 +48,13 @@
 </template>
 
 <script lang="ts" setup>
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'О компании', path: '/about', isActive: false },
+    { title: 'Партнеры и заказчики', path: '/partners', isActive: true },
+  ]
+})
 const items = [
   {
     img: '/img/partners-img-1.webp',

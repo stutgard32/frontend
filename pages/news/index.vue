@@ -2,6 +2,7 @@
   <section class="news">
     <div class="container">
       <div class="news__wrapper">
+        <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
         <h1 class="news__title">Новости и события</h1>
       </div>
       <div class="news__list">
@@ -18,6 +19,14 @@ const listNews = await useLoadData<'', News[]>(apiNews, {
     populate: ['*'],
     'sort[0]': 'createdAt:asc',
   },
+})
+
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'О компании', path: '/about', isActive: false },
+    { title: 'Новости', path: '/news', isActive: true },
+  ]
 })
 </script>
 

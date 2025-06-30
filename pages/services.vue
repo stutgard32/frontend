@@ -1,6 +1,7 @@
 <template>
   <section class="services">
     <div class="container">
+      <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
       <h1 class="services__title">Услуги</h1>
     </div>
     <div class="services__content">
@@ -43,8 +44,15 @@
   </section>
 </template>
 
-<script lang="ts" setup></script>
-
+<script lang="ts" setup>
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'О компании', path: '/about', isActive: false },
+    { title: 'Услуги', path: '/services', isActive: true },
+  ]
+})
+</script>
 <style scoped lang="scss">
 .services {
   padding: 53px 0 150px 0;

@@ -4,13 +4,26 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
 css: ['~/assets/scss/main.scss'],
-modules: [
-  'vue-yandex-maps/nuxt', '@primevue/nuxt-module'
-],
+modules: ['vue-yandex-maps/nuxt', '@primevue/nuxt-module', ['nuxt-mail', {
+  message: {
+    to: 'support@primedev.pro',
+  },
+  smtp: {
+    service: 'timeweb',
+    auth: {
+      user: 'support@primedev.pro',
+      pass: 'Kireenkov22',
+    },
+    host: "smtp.timeweb.ru",
+    port: 465,
+    secure: true,
+    requireTLS: true,
+  },
+}]],
  primevue: {
     components: {
         prefix: 'Prime',
-        include: ['Paginator ']    /* Used as <PrimeButton /> and <PrimeDataTable /> */
+        include: ['Paginator ', 'InputText', 'Button']
     },
     options: {
       theme: {

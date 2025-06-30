@@ -80,6 +80,10 @@ const formattedDate = computed(() => {
     background: linear-gradient(180deg, #517da2 83.02%, #fff 141.7%);
     text-decoration: none;
     z-index: 5;
+    &:hover {
+      background: #2c4a6b;
+      box-shadow: 0 8px 20px rgba(81, 125, 162, 0.4);
+    }
     @media screen and (max-width: 1200px) {
       font-size: 20px;
     }

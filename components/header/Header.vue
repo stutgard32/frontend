@@ -109,6 +109,23 @@ const activeMenu = () => {
     font-weight: 500;
     line-height: 130%; /* 31.2px */
     text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #000000;
+      transition: all 0.3s ease-in-out;
+      transform: scaleX(0);
+    }
+    &:hover::after {
+      transform: scaleX(1);
+    }
     @media screen and (max-width: 1280px) {
       font-size: 22px;
     }

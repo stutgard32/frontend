@@ -89,6 +89,10 @@ defineProps<{
     font-weight: 500;
     line-height: normal;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: #517da2;
+    }
   }
   &__item {
     display: flex;
@@ -103,7 +107,12 @@ defineProps<{
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
+    cursor: pointer;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: #517da2;
+    }
     @media screen and (max-width: 1280px) {
       font-size: 18px;
     }

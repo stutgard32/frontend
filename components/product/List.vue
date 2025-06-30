@@ -1,22 +1,16 @@
 <template>
   <div class="productWrap">
-    <div class="container">
-      <ul class="list-reset productWrap__items">
-        <li
-          class="productWrap__item"
-          v-for="item in List"
-          :key="item.documentId"
-        >
-          <ProductItem
-            :title="item.title"
-            :img="item.img ? item.img[0].url : '/img/no-image.png'"
-            :execution="item.execution"
-            :subtitle="item.subtitle"
-            :specifications="item.specifications"
-          />
-        </li>
-      </ul>
-    </div>
+    <ul class="list-reset productWrap__items">
+      <li class="productWrap__item" v-for="item in List" :key="item.documentId">
+        <ProductItem
+          :title="item.title"
+          :img="item.img ? item.img[0].url : '/img/no-image.png'"
+          :execution="item.execution"
+          :subtitle="item.subtitle"
+          :specifications="item.specifications"
+        />
+      </li>
+    </ul>
   </div>
 </template>
 

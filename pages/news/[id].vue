@@ -1,6 +1,7 @@
 <template>
   <section class="newsPages">
     <div class="container">
+      <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
       <h1 class="newsPages__title">{{ product?.data.title }}</h1>
     </div>
     <img class="newsPages__img" :src="product?.data.img[0].url" alt="img" />
@@ -27,6 +28,18 @@ const htmlSpecifications = computed(() =>
     ? marked.parse(product.value?.data.description)
     : ''
 )
+
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'Новости', path: '/news', isActive: false },
+    {
+      title: product.value?.data.title || 'Новость',
+      path: `/news/${id}`,
+      isActive: true,
+    },
+  ]
+})
 </script>
 
 <style scoped lang="scss">

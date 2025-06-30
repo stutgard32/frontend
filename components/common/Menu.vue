@@ -156,6 +156,11 @@ const link2 = [
     width: 40px;
     height: 40px;
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: rotate(90deg) scale(1.1);
+    }
     @media screen and (max-width: 1280px) {
       width: 35px;
       height: 35px;
@@ -203,9 +208,13 @@ const link2 = [
     font-family: 'Roboto';
     font-size: 28px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 00;
     line-height: 130%; /* 39px */
     text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: #6fa7d4;
+    }
     @media screen and (max-width: 1280px) {
       font-size: 24px;
     }
@@ -221,11 +230,15 @@ const link2 = [
     font-weight: 400;
     line-height: 130%; /* 26px */
     text-decoration: none;
+    transition: all 0.5s ease-in-out;
     @media screen and (max-width: 1280px) {
       font-size: 16px;
     }
     @media screen and (max-width: 1024px) {
       font-size: 14px;
+    }
+    &:hover {
+      color: #6fa7d4;
     }
   }
   &__list {

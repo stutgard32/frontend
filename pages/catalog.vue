@@ -2,12 +2,14 @@
   <section class="catalog">
     <div class="container">
       <div class="catalog__wrapper">
+        <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
         <h1 class="catalog__title">Оборудование европейского стандарта</h1>
         <p class="catalog__description">
           Использование современных технологий и собственное производство
           позволяет компании успешно конкурировать с импортным оборудованием
         </p>
       </div>
+
       <div class="catalog__list">
         <CatalogList :catalogList="catalogList?.data || []" />
       </div>
@@ -22,6 +24,13 @@ const catalogList = await useLoadData<'', Catalog[]>(apiCatalog, {
     populate: ['*'],
     'sort[0]': 'createdAt:asc',
   },
+})
+
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'Каталог', path: '/catalog', isActive: true },
+  ]
 })
 </script>
 

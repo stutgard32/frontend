@@ -77,6 +77,10 @@
     font-weight: 500;
     line-height: normal;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: #517da2;
+    }
   }
   &__item {
     display: flex;
@@ -92,6 +96,8 @@
     font-weight: 400;
     line-height: 130%;
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
     @media screen and (max-width: 1280px) {
       font-size: 18px;
     }
@@ -102,6 +108,9 @@
     }
     @media screen and (max-width: 380px) {
       font-size: 12px;
+    }
+    &:hover {
+      color: #517da2;
     }
   }
 }

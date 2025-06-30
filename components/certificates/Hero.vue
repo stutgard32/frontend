@@ -2,6 +2,7 @@
   <section class="certificates">
     <div class="container">
       <div class="certificates__content">
+        <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
         <h1 class="certificates__title">Сертификаты и документы</h1>
         <p class="certificates__description">
           Акционерное общество «Штутгарт Автомейшн» обладает необходимыми
@@ -24,6 +25,13 @@
 
 <script lang="ts" setup>
 import Image from 'primevue/image'
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'О компании', path: '/about', isActive: false },
+    { title: 'Сертификаты', path: '/certificates', isActive: true },
+  ]
+})
 // const openImg = (img: string) => {
 //   window.open(img, '_blank')
 // }

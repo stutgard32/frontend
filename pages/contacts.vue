@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <section class="contacts">
     <ContactsHero />
     <ContactsMap />
-  </div>
+    <ContactsForm />
+  </section>
 </template>
 
 <script lang="ts" setup></script>

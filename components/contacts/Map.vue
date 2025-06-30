@@ -1,5 +1,5 @@
 <template>
-  <section class="map">
+  <div class="map">
     <div class="container">
       <div class="map__wrapper">
         <p class="map__adress">
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts" setup></script>
@@ -25,8 +25,11 @@
     @media screen and (max-width: 1024px) {
       padding: 0 0 110px 0;
     }
+    @media screen and (max-width: 875px) {
+      padding: 0 0 70px 0;
+    }
     @media screen and (max-width: 639px) {
-      padding: 0 0 95px 0;
+      padding: 0 0 60px 0;
     }
   }
   &__adress {

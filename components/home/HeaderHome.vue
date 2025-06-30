@@ -111,16 +111,34 @@ const activeMenu = () => {
     font-weight: 500;
     line-height: 130%; /* 31.2px */
     text-decoration: none;
+    position: relative;
+
     @media screen and (max-width: 1280px) {
       font-size: 22px;
     }
     @media screen and (max-width: 1024px) {
       font-size: 13px;
-      color: #fff;
       font-weight: 400;
     }
     @media screen and (max-width: 408px) {
       font-size: 12px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #fff;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scaleX(0);
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
     }
   }
   &__1024 {

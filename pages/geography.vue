@@ -1,6 +1,7 @@
 <template>
   <section class="geography">
     <div class="container">
+      <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
       <h1 class="geography__title">География работ</h1>
       <p class="geography__description">
         Работаем с крупнейшими промышленными организациями на территерии РФ
@@ -35,6 +36,13 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'geography',
+})
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'О компании', path: '/about', isActive: false },
+    { title: 'География работ', path: '/geography', isActive: true },
+  ]
 })
 </script>
 

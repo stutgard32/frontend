@@ -2,6 +2,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero__wrapper">
+        <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
         <h1 class="hero__title">О компании</h1>
         <p class="hero__description">
           Акционерное общество «Штутгарт Автомейшн» специализируется на
@@ -9,6 +10,7 @@
           – от технического задания до выпуска сертифицированного оборудования
         </p>
       </div>
+
       <ul class="list-reset hero__items">
         <li class="hero__item" v-for="(item, index) in aboutList" :key="index">
           <h3 class="hero__subtitle">{{ item.title }}</h3>
@@ -20,8 +22,14 @@
   </section>
 </template>
 
-<script lang="ts" setup></script>
-
+<script lang="ts" setup>
+const breadcrumbs = computed(() => {
+  return [
+    { title: 'Главная', path: '/', isActive: false },
+    { title: 'О компании', path: '/about', isActive: true },
+  ]
+})
+</script>
 <style scoped lang="scss">
 .hero {
   padding: 53px 0 150px 0;
@@ -131,13 +139,17 @@
     text-align: center;
     color: #fdfdfd;
     font-family: 'Roboto';
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
     background: linear-gradient(180deg, #517da2 83.02%, #fff 141.7%);
     text-decoration: none;
     z-index: 5;
+    &:hover {
+      background: #2c4a6b;
+      box-shadow: 0 8px 20px rgba(81, 125, 162, 0.4);
+    }
     @media screen and (max-width: 1280px) {
       font-size: 18px;
     }

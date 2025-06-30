@@ -131,6 +131,16 @@ import HeaderHome from './HeaderHome.vue'
     line-height: 130%; /* 31.2px */
     text-decoration: none;
     text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: #2c4a6b;
+      border: 2px solid #517da2;
+      box-shadow: 0 8px 20px rgba(81, 125, 162, 0.4);
+    }
+
     @media screen and (max-width: 1280px) {
       font-size: 20px;
     }
@@ -138,10 +148,6 @@ import HeaderHome from './HeaderHome.vue'
       font-size: 18px;
     }
   }
-  // &__header,
-  // &__footer {
-  //   z-index: 1!;
-  // }
 }
 </style>
 <style>
