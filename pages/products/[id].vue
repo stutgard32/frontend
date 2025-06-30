@@ -1,15 +1,24 @@
 <template>
   <section class="products">
     <div class="container">
-      <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
+      <div class="products__wrapper">
+        <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
+        <a
+          v-if="currentCatalog?.documents?.url"
+          :href="currentCatalog?.documents?.url"
+          class="products__download"
+        >
+          Скачать Документацию
+        </a>
+      </div>
       <ProductList :List="product?.data || []" />
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { apiProducts } from '~~/utils/apiUrls'
-import type { Product } from '~/types/types'
+import { apiCatalog, apiProducts } from '~~/utils/apiUrls'
+import type { Catalog, Product } from '~/types/types'
 const route = useRoute()
 const id = route.params.id as string
 
@@ -18,6 +27,16 @@ const product = await useLoadData<'', Product[]>(apiProducts, {
     'filters[catalog][documentId]': id,
     sort: 'updatedAt:desc',
   },
+})
+const catalog = await useLoadData<'', Catalog[]>(apiCatalog, {
+  query: {
+    populate: ['documents'],
+    'filters[documents][id][$notNull]': true,
+  },
+})
+
+const currentCatalog = computed(() => {
+  return catalog.value?.data.find((item) => item.documentId === id)
 })
 
 const breadcrumbs = computed(() => {
@@ -44,6 +63,25 @@ const breadcrumbs = computed(() => {
   }
   @media screen and (max-width: 639px) {
     padding: 53px 0 40px 0;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  &__download {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #517da2;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: #2c4a6b;
+    }
   }
 }
 </style>
