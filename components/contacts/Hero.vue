@@ -54,16 +54,16 @@ const breadcrumbs = computed(() => {
     margin-bottom: 28px;
     color: #000;
     font-family: 'Stetica';
-    font-size: 40px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
     letter-spacing: -1.2px;
     @media screen and (max-width: 1280px) {
-      font-size: 32px;
+      font-size: 28px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
   &__icon {
@@ -114,7 +114,7 @@ const breadcrumbs = computed(() => {
   &__link {
     color: #7f7f7f;
     font-family: 'Stetica';
-    font-size: 26px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
@@ -123,7 +123,7 @@ const breadcrumbs = computed(() => {
       font-size: 22px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }

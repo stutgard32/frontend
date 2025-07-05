@@ -44,13 +44,13 @@ const onSubmit = async () => {
     color: #000;
     text-align: center;
     font-family: 'Roboto';
-    font-size: 40px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
     letter-spacing: -1.2px;
     @media screen and (max-width: 875px) {
-      font-size: 24px;
+      font-size: 22px;
       letter-spacing: -0.96px;
     }
   }
@@ -59,13 +59,13 @@ const onSubmit = async () => {
     color: #000000;
     text-align: center;
     font-family: 'Roboto';
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.48px;
     @media screen and (max-width: 875px) {
-      font-size: 18px;
+      font-size: 16px;
       letter-spacing: -0.36px;
     }
   }
@@ -84,19 +84,19 @@ const onSubmit = async () => {
   }
   &:deep(.p-inputtext) {
     width: 100%;
-    height: 50px;
+    height: 45px;
     border-radius: 5px;
     border: 1px solid #3f5d77;
     background: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.42px;
-    padding: 25px 15px;
+    padding: 10px 10px;
     @media screen and (max-width: 875px) {
-      font-size: 16px;
-      height: 40px;
-      padding: 15px 10px;
+      font-size: 14px;
+      height: 35px;
+      padding: 10px 10px;
     }
   }
   &:deep(.p-button) {
@@ -104,10 +104,10 @@ const onSubmit = async () => {
     width: 100%;
     height: 50px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     @media screen and (max-width: 875px) {
-      font-size: 16px;
+      font-size: 14px;
       height: 40px;
     }
   }
@@ -125,19 +125,19 @@ const onSubmit = async () => {
   }
   &__error {
     color: #3f5d77;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.42px;
     @media screen and (max-width: 875px) {
-      font-size: 13px;
+      font-size: 11px;
       letter-spacing: normal;
     }
   }
   &__success {
     text-align: center;
     color: #01640c;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.42px;

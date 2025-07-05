@@ -53,12 +53,12 @@ const htmlSpecifications = computed(() =>
   &__title {
     color: #000;
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: 130%; /* 26px */
     @media screen and (max-width: 1024px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media screen and (max-width: 875px) {
       font-size: 16px;
@@ -99,7 +99,7 @@ const htmlSpecifications = computed(() =>
   &__execution {
     color: rgba(0, 0, 0, 0.7);
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 26px */
@@ -113,12 +113,12 @@ const htmlSpecifications = computed(() =>
   &__specifications {
     color: rgba(0, 0, 0, 0.7);
     font-family: 'Roboto';
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
     @media screen and (max-width: 1024px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media screen and (max-width: 875px) {
       font-size: 16px;
@@ -135,18 +135,18 @@ const htmlSpecifications = computed(() =>
     margin-bottom: 20px;
     color: #000;
     font-family: 'Roboto';
-    font-size: 30px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
     @media screen and (max-width: 1024px) {
-      font-size: 24px;
-    }
-    @media screen and (max-width: 875px) {
       font-size: 20px;
     }
+    @media screen and (max-width: 875px) {
+      font-size: 18px;
+    }
     @media screen and (max-width: 808px) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
   &__wrap-3 {
@@ -167,7 +167,7 @@ const htmlSpecifications = computed(() =>
 .product__property {
   color: rgba(0, 0, 0, 0.8);
   font-family: 'Roboto';
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
@@ -177,13 +177,13 @@ const htmlSpecifications = computed(() =>
     padding-left: 0;
   }
   @media screen and (max-width: 1024px) {
-    font-size: 18px;
-  }
-  @media screen and (max-width: 875px) {
     font-size: 16px;
   }
-  @media screen and (max-width: 808px) {
+  @media screen and (max-width: 875px) {
     font-size: 14px;
+  }
+  @media screen and (max-width: 808px) {
+    font-size: 12px;
   }
 }
 </style>

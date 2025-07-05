@@ -33,13 +33,13 @@ const formattedDate = computed(() => {
     color: #000;
     text-align: center;
     font-family: 'Roboto';
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
     @media screen and (max-width: 1200px) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
   &__img {
@@ -56,7 +56,7 @@ const formattedDate = computed(() => {
     margin-bottom: 20px;
     color: #000;
     font-family: 'Roboto';
-    font-size: 14px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 24px */
@@ -73,7 +73,7 @@ const formattedDate = computed(() => {
     text-align: center;
     color: #fdfdfd;
     font-family: 'Roboto';
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
@@ -85,7 +85,7 @@ const formattedDate = computed(() => {
       box-shadow: 0 8px 20px rgba(81, 125, 162, 0.4);
     }
     @media screen and (max-width: 1200px) {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 }

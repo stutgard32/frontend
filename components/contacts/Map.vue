@@ -36,15 +36,15 @@
     margin-bottom: 20px;
     color: #7f7f7f;
     font-family: 'Stetica';
-    font-size: 26px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
     @media screen and (max-width: 1280px) {
-      font-size: 22px;
+      font-size: 18px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media screen and (max-width: 639px) {
       max-width: 500px;

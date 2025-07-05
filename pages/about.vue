@@ -43,32 +43,32 @@ const breadcrumbs = computed(() => {
     margin-bottom: 22px;
     color: #000;
     font-family: 'Stetica';
-    font-size: 40px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 60px */
     letter-spacing: -1.2px;
     @media screen and (max-width: 1280px) {
-      font-size: 32px;
+      font-size: 28px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
   &__description {
     margin-bottom: 50px;
     color: #000;
     font-family: 'Roboto';
-    font-size: 26px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
     @media screen and (max-width: 1280px) {
-      font-size: 22px;
+      font-size: 18px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
   &__wrapper {
@@ -105,14 +105,14 @@ const breadcrumbs = computed(() => {
     color: #252525;
     text-align: center;
     font-family: 'Roboto';
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 36px */
     letter-spacing: -0.72px;
     text-transform: uppercase;
     @media screen and (max-width: 1280px) {
-      font-size: 20px;
+      font-size: 18px;
       padding: 30px 20px 0 20px;
     }
   }
@@ -122,13 +122,13 @@ const breadcrumbs = computed(() => {
     color: #252525;
     text-align: center;
     font-family: 'Roboto';
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
     @media screen and (max-width: 1280px) {
-      font-size: 18px;
+      font-size: 16px;
       padding: 0 20px 0 20px;
     }
   }
@@ -139,7 +139,7 @@ const breadcrumbs = computed(() => {
     text-align: center;
     color: #fdfdfd;
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
@@ -151,7 +151,7 @@ const breadcrumbs = computed(() => {
       box-shadow: 0 8px 20px rgba(81, 125, 162, 0.4);
     }
     @media screen and (max-width: 1280px) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }

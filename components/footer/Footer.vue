@@ -103,7 +103,7 @@ defineProps<{
     max-width: 300px;
     color: #2b2b2b;
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
@@ -114,15 +114,15 @@ defineProps<{
       color: #517da2;
     }
     @media screen and (max-width: 1280px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media screen and (max-width: 639px) {
       color: #fff;
-      font-size: 14px;
+      font-size: 12px;
       max-width: 192px;
     }
     @media screen and (max-width: 380px) {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 }

@@ -12,6 +12,10 @@ export const navList = [
     link: '/about',
   },
   {
+    title: 'Новости',
+    link: '/news',
+  },
+  {
     title: 'Сертификаты',
     link: '/certificates',
   },

@@ -108,16 +108,16 @@ const items = [
     margin-bottom: 20px;
     color: #000;
     font-family: 'Stetica';
-    font-size: 40px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 60px */
     letter-spacing: -1.2px;
     @media screen and (max-width: 1280px) {
-      font-size: 32px;
+      font-size: 28px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
   &__description {
@@ -125,7 +125,7 @@ const items = [
     max-width: 764px;
     color: #252525;
     font-family: 'Roboto';
-    font-size: 26px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 39px */
@@ -134,10 +134,10 @@ const items = [
       margin-bottom: 30px;
     }
     @media screen and (max-width: 1280px) {
-      font-size: 22px;
+      font-size: 18px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
   &__items {
@@ -150,7 +150,7 @@ const items = [
     width: 100%;
     height: 100%;
     padding-left: 90px;
-    max-height: 670px;
+    max-height: 500px;
     object-fit: cover;
     &-part {
       width: 100%;

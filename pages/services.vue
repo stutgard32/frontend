@@ -66,16 +66,16 @@ const breadcrumbs = computed(() => {
     margin-bottom: 30px;
     color: #000;
     font-family: 'Stetica';
-    font-size: 40px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 60px */
     letter-spacing: -1.2px;
     @media screen and (max-width: 1280px) {
-      font-size: 32px;
+      font-size: 28px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
   &__content {
@@ -99,32 +99,32 @@ const breadcrumbs = computed(() => {
     margin-bottom: 10px;
     color: #000;
     font-family: 'Stetica';
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 45px */
     letter-spacing: -0.9px;
     @media screen and (max-width: 1280px) {
-      font-size: 22px;
+      font-size: 18px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
   &__description {
     margin-bottom: 20px;
     color: #252525;
     font-family: 'Roboto';
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
     @media screen and (max-width: 1280px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }

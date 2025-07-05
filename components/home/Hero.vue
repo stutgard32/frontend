@@ -1,5 +1,6 @@
 <template>
   <section class="hero">
+    <div class="hero__overlay-dark"></div>
     <video
       autoplay
       muted
@@ -8,13 +9,12 @@
       class="hero__video"
       poster="/img/hero-poster.webp"
     >
-      <source src="https://fefew231.b-cdn.net/hero-home.mp4" type="video/mp4" />
+      <source src="/video/hero-home.mp4" type="video/mp4" />
       Ваш браузер не поддерживает видео фон.
     </video>
-    <picture class="hero__overlay">
+    <!-- <picture class="hero__overlay-image">
       <img class="hero__image" src="/img/hero-home-1024.webp" alt="Hero" />
-    </picture>
-    <div class="hero__overlay"></div>
+    </picture> -->
     <HeaderHome class="hero__header" :colorHeader="'colorHeader'" />
     <div class="hero__wrapper">
       <div class="container">
@@ -30,12 +30,11 @@
         </div>
       </div>
     </div>
-    <FooterHome class="hero__footer" :colorFooter="'colorFooter'" />
+    <span class="hero__none"></span>
   </section>
 </template>
 
 <script lang="ts" setup>
-import FooterHome from './FooterHome.vue'
 import HeaderHome from './HeaderHome.vue'
 </script>
 
@@ -55,11 +54,8 @@ import HeaderHome from './HeaderHome.vue'
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    @media screen and (max-width: 1024px) {
-      display: none;
-    }
   }
-  &__overlay {
+  &__overlay-dark {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
@@ -77,8 +73,11 @@ import HeaderHome from './HeaderHome.vue'
     flex-direction: column;
     gap: 25px;
     align-items: flex-start;
+    @media screen and (max-width: 639px) {
+      gap: 15px;
+    }
   }
-  &__overlay {
+  &__overlay-image {
     display: none;
     @media screen and (max-width: 1024px) {
       display: block;
@@ -93,39 +92,46 @@ import HeaderHome from './HeaderHome.vue'
   }
   &__title {
     font-family: 'Stetica';
-    font-size: 35px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 700;
     line-height: 130%; /* 39px */
     color: #fff;
     @media screen and (max-width: 1280px) {
-      font-size: 28px;
+      font-size: 22px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 20px;
+      font-size: 18px;
+    }
+    @media screen and (max-width: 639px) {
+      font-size: 16px;
     }
   }
   &__description {
     font-family: 'Stetica';
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 39px */
     color: #fff;
     @media screen and (max-width: 1280px) {
-      font-size: 25px;
+      font-size: 18px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 18px;
+      font-size: 16px;
+    }
+    @media screen and (max-width: 639px) {
+      font-size: 14px;
     }
   }
   &__btn {
-    padding: 15px 20px;
+    padding: 10px 15px;
     background: linear-gradient(180deg, #517da2 83.02%, #fff 141.7%);
     width: 100%;
+    max-width: 400px;
     color: #fff;
     font-family: 'Roboto';
-    font-size: 24px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 31.2px */
@@ -146,6 +152,11 @@ import HeaderHome from './HeaderHome.vue'
     }
     @media screen and (max-width: 875px) {
       font-size: 18px;
+    }
+    @media screen and (max-width: 639px) {
+      font-size: 14px;
+      max-width: 300px;
+      padding: 5px 10px;
     }
   }
 }

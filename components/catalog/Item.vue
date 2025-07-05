@@ -95,20 +95,24 @@ defineProps<{
   }
 
   &__text {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 150%;
     font-weight: 500;
     color: #252525;
     @media screen and (max-width: 1280px) {
+      font-size: 14px;
     }
   }
 
   &__title {
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 130%;
     color: #252525;
+    @media screen and (max-width: 1280px) {
+      font-size: 16px;
+    }
   }
 
   &__color {
@@ -134,7 +138,7 @@ defineProps<{
   &__btn {
     padding: 14px 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     background: linear-gradient(180deg, #517da2 83.02%, #fff 141.7%);
     color: #fff;
@@ -143,6 +147,9 @@ defineProps<{
     &:hover {
       background: #2c4a6b;
       box-shadow: 0 8px 20px rgba(81, 125, 162, 0.4);
+    }
+    @media screen and (max-width: 1280px) {
+      font-size: 14px;
     }
   }
 }

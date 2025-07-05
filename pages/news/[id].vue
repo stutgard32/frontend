@@ -56,16 +56,16 @@ const breadcrumbs = computed(() => {
     margin-bottom: 30px;
     color: #000;
     font-family: 'Stetica';
-    font-size: 36px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: 120%; /* 60px */
     letter-spacing: -1.2px;
     @media screen and (max-width: 1280px) {
-      font-size: 32px;
+      font-size: 28px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
   &__img {
@@ -84,16 +84,16 @@ const breadcrumbs = computed(() => {
   &__text {
     color: #252525;
     font-family: 'Roboto';
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 39px */
     letter-spacing: -0.78px;
     @media screen and (max-width: 1280px) {
-      font-size: 20px;
+      font-size: 16px;
     }
     @media screen and (max-width: 875px) {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
 }

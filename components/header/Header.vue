@@ -104,7 +104,7 @@ const activeMenu = () => {
   &__link {
     color: #000;
     font-family: 'Roboto';
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 31.2px */
@@ -127,10 +127,10 @@ const activeMenu = () => {
       transform: scaleX(1);
     }
     @media screen and (max-width: 1280px) {
-      font-size: 22px;
+      font-size: 18px;
     }
     @media screen and (max-width: 1024px) {
-      font-size: 16px;
+      font-size: 14px;
       color: #fff;
       font-weight: 400;
     }

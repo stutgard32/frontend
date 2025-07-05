@@ -191,31 +191,31 @@ const link2 = [
     margin-bottom: 20px;
     color: #fff;
     font-family: 'Roboto';
-    font-size: 28px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 130%; /* 39px */
     text-decoration: none;
     @media screen and (max-width: 1280px) {
-      font-size: 24px;
+      font-size: 20px;
     }
     @media screen and (max-width: 1024px) {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
   &__link {
     color: #fff;
     font-family: 'Roboto';
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 130%; /* 26px */
     text-decoration: none;
     @media screen and (max-width: 1280px) {
-      font-size: 16px;
+      font-size: 14px;
     }
     @media screen and (max-width: 1024px) {
-      font-size: 14px;
+      font-size: 12px;
     }
   }
   &__list {

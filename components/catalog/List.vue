@@ -40,7 +40,10 @@ import type { Catalog } from '~/types/types'
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 30px;
-    @media screen and (max-width: 445px) {
+    @media screen and (max-width: 1449px) {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    @media screen and (max-width: 1280px) {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
   }

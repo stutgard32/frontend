@@ -206,7 +206,7 @@ const link2 = [
     margin-bottom: 20px;
     color: #fff;
     font-family: 'Roboto';
-    font-size: 28px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 00;
     line-height: 130%; /* 39px */
@@ -216,7 +216,7 @@ const link2 = [
       color: #6fa7d4;
     }
     @media screen and (max-width: 1280px) {
-      font-size: 24px;
+      font-size: 20px;
     }
     @media screen and (max-width: 1024px) {
       font-size: 20px;
@@ -232,10 +232,10 @@ const link2 = [
     text-decoration: none;
     transition: all 0.5s ease-in-out;
     @media screen and (max-width: 1280px) {
-      font-size: 16px;
+      font-size: 14px;
     }
     @media screen and (max-width: 1024px) {
-      font-size: 14px;
+      font-size: 12px;
     }
     &:hover {
       color: #6fa7d4;
