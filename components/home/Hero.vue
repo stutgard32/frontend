@@ -20,9 +20,12 @@
       <div class="container">
         <div class="hero__content">
           <h1 class="hero__title">АО «Штутгарт Автомейшн»</h1>
+          <p class="hero__description">Инжиниринговая компании полного цикла</p>
           <p class="hero__description">
-            Собственное производство датчиков давления и температуры, разработка
-            и поставка промышленного оборудования европейского стандарта
+            Собственное производство контрольно-измерительных приборов
+          </p>
+          <p class="hero__description">
+            Комплексная реализация проектов автоматизации
           </p>
           <NuxtLink href="/catalog" class="hero__btn"
             >Перейти в каталог</NuxtLink
@@ -71,11 +74,7 @@ import HeaderHome from './HeaderHome.vue'
     max-width: 740px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
     align-items: flex-start;
-    @media screen and (max-width: 639px) {
-      gap: 15px;
-    }
   }
   &__overlay-image {
     display: none;
@@ -91,6 +90,7 @@ import HeaderHome from './HeaderHome.vue'
     object-fit: cover;
   }
   &__title {
+    margin-bottom: 25px;
     font-family: 'Stetica';
     font-size: 30px;
     font-style: normal;
@@ -105,15 +105,18 @@ import HeaderHome from './HeaderHome.vue'
     }
     @media screen and (max-width: 639px) {
       font-size: 16px;
+      margin-bottom: 15px;
     }
   }
   &__description {
+    margin-bottom: 15px;
     font-family: 'Stetica';
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 39px */
     color: #fff;
+
     @media screen and (max-width: 1280px) {
       font-size: 18px;
     }

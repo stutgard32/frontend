@@ -68,10 +68,6 @@ const closeMenu = () => {
 
 const link1 = [
   {
-    title: 'Общая информация',
-    link: '/about',
-  },
-  {
     title: 'Заказчики и поставщики',
     link: '/partners',
   },
@@ -176,15 +172,15 @@ const link2 = [
   }
 
   &__wrapper-3 {
-    width: 300px;
+    width: 450px;
     height: 100%;
-    background: rgba(66, 66, 66, 0.8);
+    background: #000c;
     padding: 30px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     @media screen and (max-width: 1024px) {
-      width: 250px;
+      width: 350px;
     }
   }
   &__caption {
@@ -206,34 +202,35 @@ const link2 = [
     margin-bottom: 20px;
     color: #fff;
     font-family: 'Roboto';
-    font-size: 22px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 00;
+    font-weight: 600;
     line-height: 130%; /* 39px */
     text-decoration: none;
     transition: all 0.5s ease-in-out;
     &:hover {
       color: #6fa7d4;
     }
-    @media screen and (max-width: 1280px) {
-      font-size: 20px;
-    }
+    // @media screen and (max-width: 1280px) {
+    //   font-size: 20px;
+    // }
     @media screen and (max-width: 1024px) {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
   &__link {
     color: #fff;
     font-family: 'Roboto';
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 130%; /* 26px */
     text-decoration: none;
     transition: all 0.5s ease-in-out;
-    @media screen and (max-width: 1280px) {
-      font-size: 14px;
-    }
+
+    // @media screen and (max-width: 1280px) {
+    //   font-size: 14px;
+    // }
     @media screen and (max-width: 1024px) {
       font-size: 12px;
     }
@@ -245,7 +242,7 @@ const link2 = [
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
   }
 }
 .slide-enter-active,

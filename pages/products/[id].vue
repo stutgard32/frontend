@@ -3,22 +3,15 @@
     <div class="container">
       <div class="products__wrapper">
         <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
-        <a
-          v-if="currentCatalog?.documents?.url"
-          :href="currentCatalog?.documents?.url"
-          class="products__download"
-        >
-          Скачать Документацию
-        </a>
       </div>
-      <ProductList :List="product?.data || []" />
+      <ProductsList :List="product?.data || []" />
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { apiCatalog, apiProducts } from '~~/utils/apiUrls'
-import type { Catalog, Product } from '~/types/types'
+import { apiProducts } from '~~/utils/apiUrls'
+import type { Product } from '~/types/types'
 const route = useRoute()
 const id = route.params.id as string
 
@@ -26,17 +19,8 @@ const product = await useLoadData<'', Product[]>(apiProducts, {
   query: {
     'filters[catalog][documentId]': id,
     sort: 'updatedAt:desc',
+    populate: ['catalog', 'img'],
   },
-})
-const catalog = await useLoadData<'', Catalog[]>(apiCatalog, {
-  query: {
-    populate: ['documents'],
-    'filters[documents][id][$notNull]': true,
-  },
-})
-
-const currentCatalog = computed(() => {
-  return catalog.value?.data.find((item) => item.documentId === id)
 })
 
 const breadcrumbs = computed(() => {
@@ -44,9 +28,9 @@ const breadcrumbs = computed(() => {
     { title: 'Главная', path: '/', isActive: false },
     { title: 'Каталог', path: '/catalog', isActive: false },
   ]
-  if (product.value?.data[0].catalog) {
+  if (product.value?.data?.[0]?.catalog) {
     crumbs.push({
-      title: product.value?.data[0].catalog.title,
+      title: product.value.data[0].catalog.title,
       path: route.path,
       isActive: true,
     })

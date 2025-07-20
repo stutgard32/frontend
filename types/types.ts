@@ -20,29 +20,8 @@ export interface Catalog {
   publishedAt: string;
   img: Image[];
   products: Product[];
-  documents: Document;
 }
-export interface Document {
-  id: number;
-  documentId: string;
-  name: string;
-  alternativeText: string | null;
-  caption: string | null;
-  width: number | null;
-  height: number | null;
-  formats: null;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl: string | null;
-  provider: string;
-  provider_metadata: any | null;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-}
+
 export interface Image {
   id: number;
   documentId: string;
@@ -83,10 +62,7 @@ export interface ImageFormat {
 export interface Product {
   id: number;
   documentId: string;
-  article: string;
-  execution: string;
   title: string;
-  subtitle: string;
   specifications: any;
   createdAt: string;
   updatedAt: string;

@@ -41,7 +41,7 @@ defineProps<{
 .catalogItem {
   &__item-inner {
     height: 100%;
-    min-height: 400px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

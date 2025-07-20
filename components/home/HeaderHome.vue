@@ -27,6 +27,7 @@
           ><img class="header__logo" src="/img/logo.png" alt="logo"
         /></NuxtLink>
       </div> -->
+
       <div class="header__wrapper-2">
         <div class="header__wrapper-4">
           <img
@@ -44,12 +45,23 @@
             ><img class="header__logo" src="/img/logo.png" alt="logo"
           /></NuxtLink>
         </div>
+        <div class="header__titleWrapper-2">
+          <span class="header__title">АО «Штутгарт Амтомейшн»</span>
+        </div>
         <ul class="list-reset header__list">
-          <li class="header__item">
-            <span :class="'header__link'">9:00 - 18:00, Пн-Пт</span>
-            <p :class="'header__link'">
-              г. Казань, ул. Побежимова, д. 55А, офис 401, 402, 403
-            </p>
+          <li
+            class="header__item"
+            style="display: flex; flex-direction: row; max-width: 100%"
+          >
+            <div class="header__titleWrapper">
+              <span class="header__title">АО «Штутгарт Амтомейшн»</span>
+            </div>
+            <div class="header__info">
+              <span :class="'header__link'">9:00 - 18:00, Пн-Пт</span>
+              <p :class="'header__link'">
+                г. Казань, ул. Побежимова, д. 55А, офис 401, 402, 403
+              </p>
+            </div>
           </li>
           <li class="header__item-2">
             <div class="header__wrapper-3">
@@ -156,24 +168,48 @@ const activeMenu = () => {
 
   &__item {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
-    @media screen and (max-width: 1455px) {
-      flex-direction: column;
-      gap: 2px;
-    }
-    @media screen and (max-width: 1024px) {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 217px;
-    }
+    max-width: 217px;
+  }
+  &__info {
+    max-width: 217px;
   }
   &__item-2 {
     display: flex;
     align-items: center;
-    gap: 150px;
+    gap: 50px;
     @media screen and (max-width: 1455px) {
       gap: 50px;
+    }
+  }
+  &__titleWrapper {
+    @media screen and (max-width: 915px) {
+      display: none;
+    }
+    &-2 {
+      display: none;
+      @media screen and (max-width: 915px) {
+        display: block;
+      }
+    }
+  }
+  &__title {
+    margin-right: 50px;
+    display: inline-block;
+    color: #fff;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    @media screen and (max-width: 915px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 875px) {
+      margin-bottom: 10px;
+      font-size: 14px;
     }
   }
   &__link {
@@ -185,14 +221,12 @@ const activeMenu = () => {
     line-height: 130%; /* 31.2px */
     text-decoration: none;
     position: relative;
-    padding: 5px 10px;
+    padding: 3px 6px;
     border-radius: 6px;
     transition: all 0.3s ease;
 
     @media screen and (max-width: 1280px) {
-      font-size: 14px;
-      font-weight: 400;
-      padding: 6px 12px;
+      padding: 0;
     }
     @media screen and (max-width: 875px) {
       font-size: 12px;
@@ -208,9 +242,9 @@ const activeMenu = () => {
         box-shadow: none;
       }
     }
-    @media screen and (max-width: 1024px) {
-      padding: 0;
-    }
+    // @media screen and (max-width: 1024px) {
+    //   padding: 0;
+    // }
   }
   // &__1024 {
   //   display: flex;
@@ -241,14 +275,15 @@ const activeMenu = () => {
   }
   &__wrapper-3 {
     display: flex;
-    gap: 10px;
-    @media screen and (max-width: 1455px) {
-      flex-direction: column;
-      gap: 2px;
-    }
-    @media screen and (max-width: 1024px) {
-      gap: 6px;
-    }
+    gap: 6px;
+    flex-direction: column;
+    // @media screen and (max-width: 1455px) {
+
+    //   gap: 2px;
+    // }
+    // @media screen and (max-width: 1024px) {
+    //   gap: 6px;
+    // }
   }
   &__wrapper-4 {
     display: none;

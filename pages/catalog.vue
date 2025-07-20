@@ -3,11 +3,7 @@
     <div class="container">
       <div class="catalog__wrapper">
         <CommonBreadCrumbs :breadcrumbs="breadcrumbs" />
-        <h1 class="catalog__title">Оборудование европейского стандарта</h1>
-        <p class="catalog__description">
-          Использование современных технологий и собственное производство
-          позволяет компании успешно конкурировать с импортным оборудованием
-        </p>
+        <h1 class="catalog__title">Оборудование и  проектные  решения</h1>
       </div>
 
       <div class="catalog__list">
@@ -38,7 +34,6 @@ const breadcrumbs = computed(() => {
 .catalog {
   padding-top: 53px;
   &__title {
-    margin-bottom: 23px;
     color: #000;
     font-family: 'Stetica';
     font-size: 32px;

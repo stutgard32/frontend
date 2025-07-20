@@ -38,13 +38,31 @@ import type { Catalog } from '~/types/types'
 .catalog {
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 30px;
-    @media screen and (max-width: 1449px) {
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 100%;
+      padding: 0 20px;
     }
-    @media screen and (max-width: 1280px) {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+      padding: 0 15px;
+    }
+
+    @media screen and (max-width: 480px) {
+      padding: 0 10px;
     }
   }
 }
