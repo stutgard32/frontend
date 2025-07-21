@@ -67,8 +67,12 @@ export interface Product {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
+  description: string;
+  prevspecifications: string;
+  prevdescription: string;
   img: Image[];
   catalog: Catalog;
+  documents: Document | Document[] | null;
 }
 
 
@@ -127,4 +131,26 @@ export interface ProductNews {
 
 export interface News {
   data: ProductNews[];
+}
+
+export interface Document {
+  id: number;
+  documentId: string;
+  name: string;
+  alternativeText: string | null;
+  caption: string | null;
+  width: number | null;
+  height: number | null;
+  formats: null;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: string | null;
+  provider: string;
+  provider_metadata: any | null;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
 }
