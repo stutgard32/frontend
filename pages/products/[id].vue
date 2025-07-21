@@ -18,11 +18,13 @@ const id = route.params.id as string
 const product = await useLoadData<'', Product[]>(apiProducts, {
   query: {
     'filters[catalog][documentId]': id,
-    sort: 'updatedAt:desc',
-    populate: ['catalog', 'img'],
+    'sort[0]': 'updatedAt:desc',
+    'fields[0]': 'title',
+    'populate[img][fields][0]': 'id',
+    'populate[img][fields][1]': 'url',
+    'populate[catalog][fields][0]': 'title',
   },
 })
-
 const breadcrumbs = computed(() => {
   const crumbs = [
     { title: 'Главная', path: '/', isActive: false },

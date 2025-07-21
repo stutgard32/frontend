@@ -23,9 +23,8 @@
       <li class="productWrap__item" v-for="item in List" :key="item.documentId">
         <ProductsItem
           :id="item.documentId"
-          :title="item.title"
+          :title="item?.title || ''"
           :img="item.img ? item.img[0].url : '/img/no-image.png'"
-          :specifications="item.specifications"
         />
       </li>
     </ul>
@@ -37,11 +36,10 @@ import type { Product } from '~/types/types'
 import type { Catalog } from '~/types/types'
 const catalogList = await useLoadData<'', Catalog[]>(apiCatalog, {
   query: {
-    populate: ['*'],
+    fields: ['title'],
     'sort[0]': 'createdAt:asc',
   },
 })
-
 defineProps<{
   List: Product[]
 }>()

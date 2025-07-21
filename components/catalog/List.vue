@@ -15,9 +15,9 @@ import type { Catalog } from '~/types/types'
       >
         <CatalogItem
           :link="item.documentId"
-          :title="item.title"
+          :title="item?.title || ''"
           :img="item.img ? item.img[0].url : '/img/no-image.png'"
-          :description="item.description"
+          :description="item?.description || ''"
           :isBackground="
             item.title.includes('ЭЛАРА') ||
             item.title ===

@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 defineProps<{
-  title: string
-  img: string
+  title?: string
+  img?: string
   isBackground?: boolean
   isColor?: boolean
-  description: string
-  link: string
+  description?: string
+  link?: string
 }>()
 </script>
 

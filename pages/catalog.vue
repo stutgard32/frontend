@@ -17,11 +17,11 @@
 import type { Catalog } from '~/types/types'
 const catalogList = await useLoadData<'', Catalog[]>(apiCatalog, {
   query: {
-    populate: ['*'],
+    fields: ['title', 'description'],
+    populate: ['img'],
     'sort[0]': 'createdAt:asc',
   },
 })
-
 const breadcrumbs = computed(() => {
   return [
     { title: 'Главная', path: '/', isActive: false },

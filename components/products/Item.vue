@@ -2,7 +2,7 @@
   <div class="product">
     <div class="product__wrap">
       <div class="product__image">
-        <img class="product__img" :src="img" :alt="title" />
+        <img class="product__img" :src="img" alt="product" />
       </div>
       <h2 class="product__title">{{ title }}</h2>
       <!-- <span class="product__execution">{{ execution }}</span> -->
@@ -32,9 +32,8 @@
 <script lang="ts" setup>
 // import { marked } from 'marked'
 defineProps<{
-  title: string
+  title?: string
   img?: string
-  specifications?: string
   id: string
 }>()
 
