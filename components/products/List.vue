@@ -7,7 +7,15 @@
           v-for="item in catalogList?.data || []"
           :key="item?.documentId"
         >
-          {{ item?.title }}
+          <NuxtLink
+            class="productWrap__nav-link"
+            :to="`/products/${item?.documentId}`"
+            :class="{
+              'productWrap__nav-link--active':
+                $route.params.id === item?.documentId,
+            }"
+            >{{ item?.title }}</NuxtLink
+          >
         </li>
       </ul>
     </div>
@@ -89,9 +97,8 @@ defineProps<{
   }
   &__nav {
     background: #fff;
-    border-radius: 8px;
+    border-radius: 7px;
     border: 1px solid #e0e0e0;
-    padding: 4px 0;
     max-width: 320px;
     width: 100%;
     box-sizing: border-box;
@@ -100,18 +107,48 @@ defineProps<{
       flex-direction: column;
       gap: 0;
       margin: 0;
+
       padding: 0;
     }
-    &-item {
+    &-link {
+      position: relative;
       font-size: 15px;
       color: #333;
+      text-decoration: none;
+      display: block;
+      &--active {
+        color: #2c4a6b;
+        font-weight: 600;
+        &::before {
+          content: '';
+          position: absolute;
+          left: -18px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 5px;
+          height: 13px;
+          border-top-right-radius: 7px;
+          border-bottom-right-radius: 7px;
+          background: #2c4a6b;
+          display: block;
+        }
+      }
+    }
+    &-item {
       padding: 18px 18px;
       background: #fff;
       border: none;
       border-bottom: 1px solid #e0e0e0;
       cursor: pointer;
       transition: background 0.2s;
-
+      &:first-child {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+      }
       &:last-child {
         border-bottom: none;
       }
