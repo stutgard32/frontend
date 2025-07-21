@@ -1,7 +1,9 @@
 <template>
   <div class="product">
     <div class="product__wrap">
-      <img class="product__img" :src="img" alt="img" />
+      <div class="product__image">
+        <img class="product__img" :src="img" :alt="title" />
+      </div>
       <h2 class="product__title">{{ title }}</h2>
       <!-- <span class="product__execution">{{ execution }}</span> -->
       <!-- <div @click="toggleProperty" class="product__wrap-2">
@@ -53,6 +55,25 @@ defineProps<{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  &__image {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    @media screen and (max-width: 480px) {
+      height: 150px;
+    }
+  }
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
   &__title {
     margin-bottom: 20px;
     color: #3f5d77;
