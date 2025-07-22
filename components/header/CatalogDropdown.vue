@@ -44,6 +44,7 @@ console.log(catalogList.value?.data)
   padding: 32px 24px;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
   min-width: 900px;
   z-index: 1000;
 }
@@ -72,7 +73,7 @@ console.log(catalogList.value?.data)
 .catalog-dropdown__title {
   font-size: 14px;
   color: #222;
-  font-weight: 500;
+  font-weight: 600;
 }
 @media (max-width: 1200px) {
   .catalog-dropdown {

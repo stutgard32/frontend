@@ -57,11 +57,6 @@
                 >
                   {{ item.title }}
                 </NuxtLink>
-                <HeaderCatalogDropdown
-                  v-if="dropdown === 'catalog'"
-                  class="header__catalog-dropdown"
-                  @close="dropdown = null"
-                />
               </div>
               <div
                 v-else-if="item.title === 'О компании'"
@@ -97,10 +92,18 @@
         /></NuxtLink>
       </div>
     </div>
+    <HeaderCatalogDropdown
+      v-if="dropdown === 'catalog'"
+      class="header__catalog-dropdown"
+      @close="dropdown = null"
+      @mouseenter="onDropdownEnter('catalog')"
+      @mouseleave="onDropdownLeave('catalog')"
+    />
   </header>
 </template>
 
 <script lang="ts" setup>
+import { onMounted, onUnmounted } from 'vue'
 import AboutDropdown from './AboutDropdown.vue'
 
 defineProps<{
@@ -126,6 +129,18 @@ function onDropdownLeave(type: 'catalog' | 'about') {
     }
   }, 300)
 }
+
+function handleScroll() {
+  if (dropdown.value === 'catalog') {
+    dropdown.value = null
+  }
+}
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <style scoped lang="scss">
@@ -207,7 +222,6 @@ function onDropdownLeave(type: 'catalog' | 'about') {
     }
   }
   &__wrapper {
-    border-bottom: 1px solid #517da2;
     position: relative;
     display: flex;
     align-items: center;
@@ -244,6 +258,21 @@ function onDropdownLeave(type: 'catalog' | 'about') {
   &__about-wrapper {
     position: relative;
     display: inline-block;
+  }
+}
+.header__catalog-dropdown {
+  position: fixed;
+  top: 75px;
+  left: 90px;
+  right: 0;
+  width: auto;
+  z-index: 1000;
+  @media screen and (max-width: 1280px) {
+    left: 65px;
+    top: 73px;
+  }
+  @media screen and (max-width: 1024px) {
+    display: none;
   }
 }
 </style>

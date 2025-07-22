@@ -7,7 +7,7 @@
       class="about-dropdown__item"
       @click="handleClick"
     >
-      {{ item.title }}
+      <span class="about-dropdown__item-title">{{ item.title }}</span>
     </NuxtLink>
   </div>
 </template>
@@ -33,6 +33,7 @@ function handleClick() {
 }
 .about-dropdown__item {
   padding: 10px 24px;
+  border-radius: 12px;
   color: #222;
   text-decoration: none;
   font-size: 16px;
@@ -40,5 +41,10 @@ function handleClick() {
 }
 .about-dropdown__item:hover {
   background: #f7fafd;
+}
+.about-dropdown__item-title {
+  font-size: 14px;
+  color: #222;
+  text-decoration: none;
 }
 </style>

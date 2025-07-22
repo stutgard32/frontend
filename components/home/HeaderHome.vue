@@ -1,33 +1,6 @@
 <template>
   <header :class="'header'">
     <div class="container">
-      <!-- <div class="header__wrapper">
-        <img
-          class="header__menu"
-          @click="activeMenu"
-          src="/img/burger.png"
-          alt="logo"
-        />
-       
-        <span class="header__none"></span>
-        <nav class="header__nav">
-          <ul class="list-reset header__list">
-            <li
-              v-for="(item, index) in navList"
-              :key="index"
-              class="header__item"
-            >
-              <NuxtLink :class="'header__link'" :to="item.link">
-                {{ item.title }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </nav>
-        <NuxtLink href="/"
-          ><img class="header__logo" src="/img/logo.png" alt="logo"
-        /></NuxtLink>
-      </div> -->
-
       <div class="header__wrapper-2">
         <div class="header__wrapper-4">
           <img
@@ -82,12 +55,46 @@
         </ul>
       </div>
     </div>
+    <HeaderCatalogDropdown
+      class="header__catalog-dropdown"
+      v-if="dropdown === 'catalog'"
+      @close="dropdown = null"
+      @mouseenter="onDropdownEnter('catalog')"
+      @mouseleave="onDropdownLeave('catalog')"
+    />
     <nav class="header__nav">
       <ul class="list-reset header__list-nav">
         <li v-for="(item, index) in navList" :key="index" class="header__item">
-          <NuxtLink :class="'header__link'" :to="item.link">
-            {{ item.title }}
-          </NuxtLink>
+          <div
+            v-if="item.title === 'Каталог'"
+            class="header__catalog-wrapper"
+            @mouseenter="onDropdownEnter('catalog')"
+            @mouseleave="onDropdownLeave('catalog')"
+          >
+            <NuxtLink :class="'header__link'" :to="item.link">
+              {{ item.title }}
+            </NuxtLink>
+          </div>
+          <div
+            v-else-if="item.title === 'О компании'"
+            class="header__about-wrapper"
+            @mouseenter="onDropdownEnter('about')"
+            @mouseleave="onDropdownLeave('about')"
+          >
+            <NuxtLink :class="'header__link'" :to="item.link">
+              {{ item.title }}
+            </NuxtLink>
+            <AboutDropdown
+              v-if="dropdown === 'about'"
+              class="header__about-dropdown"
+              @close="dropdown = null"
+            />
+          </div>
+          <template v-else>
+            <NuxtLink :class="'header__link'" :to="item.link">
+              {{ item.title }}
+            </NuxtLink>
+          </template>
         </li>
       </ul>
     </nav>
@@ -96,16 +103,31 @@
 
 <script lang="ts" setup>
 import CommonMobilMenu from '../common/MobilMenu.vue'
+import HeaderCatalogDropdown from '~/components/header/CatalogDropdown.vue'
+import AboutDropdown from '~/components/header/AboutDropdown.vue'
 const openMenu = ref(false)
 const activeMenu = () => {
   openMenu.value = !openMenu.value
+}
+const dropdown = ref<'catalog' | 'about' | null>(null)
+let hideTimeout: ReturnType<typeof setTimeout> | null = null
+function onDropdownEnter(type: 'catalog' | 'about') {
+  if (hideTimeout) clearTimeout(hideTimeout)
+  dropdown.value = type
+}
+function onDropdownLeave(type: 'catalog' | 'about') {
+  hideTimeout = setTimeout(() => {
+    if (dropdown.value === type) {
+      dropdown.value = null
+    }
+  }, 300)
 }
 </script>
 
 <style scoped lang="scss">
 .header {
-  position: relative;
   background: rgba(81, 125, 162, 0.6) 84.28%;
+  position: relative;
 
   &__list {
     display: flex;
@@ -118,6 +140,7 @@ const activeMenu = () => {
       margin-right: 0;
     }
     &-nav {
+      position: relative;
       padding: 7px 0;
       display: flex;
       gap: 40px;
@@ -242,23 +265,7 @@ const activeMenu = () => {
         box-shadow: none;
       }
     }
-    // @media screen and (max-width: 1024px) {
-    //   padding: 0;
-    // }
   }
-  // &__1024 {
-  //   display: flex;
-  // }
-  // &__none {
-  //   @media screen and (max-width: 1024px) {
-  //     display: none;
-  //   }
-  // }
-  // &__menu {
-  //   display: block;
-  //   width: 30px;
-  //   height: 30px;
-  // }
   &__logo-1024 {
     @media screen and (max-width: 1024px) {
       width: 60px;
@@ -277,13 +284,6 @@ const activeMenu = () => {
     display: flex;
     gap: 6px;
     flex-direction: column;
-    // @media screen and (max-width: 1455px) {
-
-    //   gap: 2px;
-    // }
-    // @media screen and (max-width: 1024px) {
-    //   gap: 6px;
-    // }
   }
   &__wrapper-4 {
     display: none;
@@ -309,5 +309,36 @@ const activeMenu = () => {
       height: auto;
     }
   }
+}
+.header__catalog-dropdown {
+  position: fixed;
+  top: 176px;
+  left: 90px;
+  right: 0;
+  width: auto;
+  z-index: 1000;
+  @media screen and (max-width: 1280px) {
+    left: 65px;
+    top: 155px;
+  }
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+.header__about-dropdown {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  @media screen and (max-width: 1280px) {
+    top: 33px;
+  }
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+.header__catalog-wrapper,
+.header__about-wrapper {
+  position: relative;
+  display: inline-block;
 }
 </style>
