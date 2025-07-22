@@ -45,9 +45,50 @@
               :key="index"
               class="header__item"
             >
-              <NuxtLink :class="['header__link', colorHeader]" :to="item.link">
-                {{ item.title }}
-              </NuxtLink>
+              <div
+                v-if="item.title === 'Каталог'"
+                class="header__catalog-wrapper"
+                @mouseenter="onDropdownEnter('catalog')"
+                @mouseleave="onDropdownLeave('catalog')"
+              >
+                <NuxtLink
+                  :class="['header__link', colorHeader]"
+                  :to="item.link"
+                >
+                  {{ item.title }}
+                </NuxtLink>
+                <HeaderCatalogDropdown
+                  v-if="dropdown === 'catalog'"
+                  class="header__catalog-dropdown"
+                  @close="dropdown = null"
+                />
+              </div>
+              <div
+                v-else-if="item.title === 'О компании'"
+                class="header__about-wrapper"
+                @mouseenter="onDropdownEnter('about')"
+                @mouseleave="onDropdownLeave('about')"
+              >
+                <NuxtLink
+                  :class="['header__link', colorHeader]"
+                  :to="item.link"
+                >
+                  {{ item.title }}
+                </NuxtLink>
+                <AboutDropdown
+                  v-if="dropdown === 'about'"
+                  class="header__about-dropdown"
+                  @close="dropdown = null"
+                />
+              </div>
+              <template v-else>
+                <NuxtLink
+                  :class="['header__link', colorHeader]"
+                  :to="item.link"
+                >
+                  {{ item.title }}
+                </NuxtLink>
+              </template>
             </li>
           </ul>
         </nav>
@@ -60,6 +101,8 @@
 </template>
 
 <script lang="ts" setup>
+import AboutDropdown from './AboutDropdown.vue'
+
 defineProps<{
   colorHeader?: string
   colorbackground?: string
@@ -68,6 +111,20 @@ defineProps<{
 const openMenu = ref(false)
 const activeMenu = () => {
   openMenu.value = !openMenu.value
+}
+const dropdown = ref<'catalog' | 'about' | null>(null)
+let hideTimeout: ReturnType<typeof setTimeout> | null = null
+
+function onDropdownEnter(type: 'catalog' | 'about') {
+  if (hideTimeout) clearTimeout(hideTimeout)
+  dropdown.value = type
+}
+function onDropdownLeave(type: 'catalog' | 'about') {
+  hideTimeout = setTimeout(() => {
+    if (dropdown.value === type) {
+      dropdown.value = null
+    }
+  }, 300)
 }
 </script>
 
@@ -150,6 +207,8 @@ const activeMenu = () => {
     }
   }
   &__wrapper {
+    border-bottom: 1px solid #517da2;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -168,6 +227,23 @@ const activeMenu = () => {
       width: 40px;
       height: auto;
     }
+  }
+  &__catalog-dropdown {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    transform: translateY(10px);
+    z-index: 1000;
+  }
+  &__about-dropdown {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    z-index: 1000;
+  }
+  &__about-wrapper {
+    position: relative;
+    display: inline-block;
   }
 }
 </style>
