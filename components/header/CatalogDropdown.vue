@@ -32,7 +32,6 @@ const catalogList = await useLoadData<'', Catalog[]>(apiCatalog, {
     'sort[0]': 'createdAt:asc',
   },
 })
-console.log(catalogList.value?.data)
 </script>
 
 <style scoped>

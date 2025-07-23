@@ -146,9 +146,10 @@ function onDropdownLeave(type: 'catalog' | 'about') {
       gap: 40px;
       width: 100%;
       justify-content: center;
-      @media screen and (max-width: 1024px) {
-        display: none;
-      }
+      align-items: center;
+      // @media screen and (max-width: 1024px) {
+      //   display: none;
+      // }
       li {
         position: relative;
 
@@ -167,12 +168,17 @@ function onDropdownLeave(type: 'catalog' | 'about') {
             transparent 100%
           );
         }
+        // @media screen and (max-width: 768px) {
+        //   display: none;
+        // }
       }
 
       @media screen and (max-width: 768px) {
         gap: 20px;
-        flex-wrap: wrap;
-        padding: 10px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        // flex-wrap: wrap;
+        // padding: 10px 20px;
       }
     }
   }

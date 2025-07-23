@@ -91,6 +91,46 @@
           ><img class="header__logo" src="/img/logo.png" alt="logo"
         /></NuxtLink>
       </div>
+      <nav class="header__nav-2">
+        <ul class="list-reset header__list">
+          <li
+            v-for="(item, index) in navList"
+            :key="index"
+            class="header__item"
+          >
+            <div
+              v-if="item.title === 'Каталог'"
+              class="header__catalog-wrapper"
+              @mouseenter="onDropdownEnter('catalog')"
+              @mouseleave="onDropdownLeave('catalog')"
+            >
+              <NuxtLink :class="['header__link', colorHeader]" :to="item.link">
+                {{ item.title }}
+              </NuxtLink>
+            </div>
+            <div
+              v-else-if="item.title === 'О компании'"
+              class="header__about-wrapper"
+              @mouseenter="onDropdownEnter('about')"
+              @mouseleave="onDropdownLeave('about')"
+            >
+              <NuxtLink :class="['header__link', colorHeader]" :to="item.link">
+                {{ item.title }}
+              </NuxtLink>
+              <AboutDropdown
+                v-if="dropdown === 'about'"
+                class="header__about-dropdown"
+                @close="dropdown = null"
+              />
+            </div>
+            <template v-else>
+              <NuxtLink :class="['header__link', colorHeader]" :to="item.link">
+                {{ item.title }}
+              </NuxtLink>
+            </template>
+          </li>
+        </ul>
+      </nav>
     </div>
     <HeaderCatalogDropdown
       v-if="dropdown === 'catalog'"
@@ -158,11 +198,28 @@ onUnmounted(() => {
       width: 100%;
       justify-content: space-between;
       margin-right: 50px;
+      align-items: center;
+      padding-bottom: 10px;
+    }
+    @media screen and (max-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    @media screen and (max-width: 639px) {
+      border-top: 1px solid #fff;
+      padding-top: 10px;
     }
   }
   &__nav {
     @media screen and (max-width: 1024px) {
       display: none;
+    }
+  }
+  &__nav-2 {
+    display: none;
+    @media screen and (max-width: 1024px) {
+      display: block;
     }
   }
   &__item {
@@ -205,6 +262,15 @@ onUnmounted(() => {
       font-size: 14px;
       color: #fff;
       font-weight: 400;
+      &::after {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 876px) {
+      font-size: 12px;
+    }
+    @media screen and (max-width: 768px) {
+      text-align: center;
     }
   }
   &__1024 {
@@ -254,10 +320,21 @@ onUnmounted(() => {
     top: 48px;
     left: 0;
     z-index: 1000;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+  &__catalog-wrapper {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
   }
   &__about-wrapper {
     position: relative;
     display: inline-block;
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
   }
 }
 .header__catalog-dropdown {
