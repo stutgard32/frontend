@@ -147,6 +147,7 @@ function onDropdownLeave(type: 'catalog' | 'about') {
       width: 100%;
       justify-content: center;
       align-items: center;
+      font-size: 0;
       // @media screen and (max-width: 1024px) {
       //   display: none;
       // }
@@ -158,6 +159,7 @@ function onDropdownLeave(type: 'catalog' | 'about') {
           position: absolute;
           right: -20px;
           top: 50%;
+
           transform: translateY(-50%);
           width: 1px;
           height: 15px;
@@ -168,17 +170,11 @@ function onDropdownLeave(type: 'catalog' | 'about') {
             transparent 100%
           );
         }
-        // @media screen and (max-width: 768px) {
-        //   display: none;
-        // }
       }
-
       @media screen and (max-width: 768px) {
         gap: 20px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        // flex-wrap: wrap;
-        // padding: 10px 20px;
       }
     }
   }

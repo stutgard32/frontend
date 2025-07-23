@@ -194,6 +194,7 @@ onUnmounted(() => {
   &__list {
     display: flex;
     gap: 30px;
+    font-size: 0;
     @media screen and (max-width: 1024px) {
       width: 100%;
       justify-content: space-between;
