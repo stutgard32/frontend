@@ -14,6 +14,9 @@
             v-if="openMenu"
             @closeMenu="activeMenu"
           />
+          <div class="header__titleWrapper-3">
+            <span class="header__title">АО «Штутгарт Амтомейшн»</span>
+          </div>
           <NuxtLink href="/"
             ><img class="header__logo" src="/img/logo.png" alt="logo"
           /></NuxtLink>
@@ -229,6 +232,15 @@ onUnmounted(() => {
     &-2 {
       display: none;
       @media screen and (max-width: 915px) {
+        display: block;
+      }
+      @media screen and (max-width: 639px) {
+        display: none;
+      }
+    }
+    &-3 {
+      display: none;
+      @media screen and (max-width: 639px) {
         display: block;
       }
     }
