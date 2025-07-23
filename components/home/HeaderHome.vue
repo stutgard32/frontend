@@ -57,7 +57,7 @@
     </div>
     <HeaderCatalogDropdown
       class="header__catalog-dropdown"
-      v-if="dropdown === 'catalog'"
+      v-if="dropdown === 'catalog' && windowWidth > 1024"
       @close="dropdown = null"
       @mouseenter="onDropdownEnter('catalog')"
       @mouseleave="onDropdownLeave('catalog')"
@@ -85,7 +85,7 @@
               {{ item.title }}
             </NuxtLink>
             <AboutDropdown
-              v-if="dropdown === 'about'"
+              v-if="dropdown === 'about' && windowWidth > 1024"
               class="header__about-dropdown"
               @close="dropdown = null"
             />
@@ -105,6 +105,7 @@
 import CommonMobilMenu from '../common/MobilMenu.vue'
 import HeaderCatalogDropdown from '~/components/header/CatalogDropdown.vue'
 import AboutDropdown from '~/components/header/AboutDropdown.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 const openMenu = ref(false)
 const activeMenu = () => {
   openMenu.value = !openMenu.value
@@ -122,6 +123,18 @@ function onDropdownLeave(type: 'catalog' | 'about') {
     }
   }, 300)
 }
+const windowWidth = ref(
+  typeof window !== 'undefined' ? window.innerWidth : 1920
+)
+function handleResize() {
+  windowWidth.value = window.innerWidth
+}
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
 </script>
 
 <style scoped lang="scss">
@@ -329,7 +342,7 @@ function onDropdownLeave(type: 'catalog' | 'about') {
 }
 .header__about-dropdown {
   position: absolute;
-  top: 36px;
+  top: 33px;
   left: 0;
   @media screen and (max-width: 1280px) {
     top: 33px;

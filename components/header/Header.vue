@@ -71,7 +71,7 @@
                   {{ item.title }}
                 </NuxtLink>
                 <AboutDropdown
-                  v-if="dropdown === 'about'"
+                  v-if="dropdown === 'about' && windowWidth > 1024"
                   class="header__about-dropdown"
                   @close="dropdown = null"
                 />
@@ -118,7 +118,7 @@
                 {{ item.title }}
               </NuxtLink>
               <AboutDropdown
-                v-if="dropdown === 'about'"
+                v-if="dropdown === 'about' && windowWidth > 1024"
                 class="header__about-dropdown"
                 @close="dropdown = null"
               />
@@ -133,7 +133,7 @@
       </nav>
     </div>
     <HeaderCatalogDropdown
-      v-if="dropdown === 'catalog'"
+      v-if="dropdown === 'catalog' && windowWidth > 1024"
       class="header__catalog-dropdown"
       @close="dropdown = null"
       @mouseenter="onDropdownEnter('catalog')"
@@ -143,7 +143,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import AboutDropdown from './AboutDropdown.vue'
 
 defineProps<{
@@ -175,11 +175,20 @@ function handleScroll() {
     dropdown.value = null
   }
 }
+
+const windowWidth = ref(
+  typeof window !== 'undefined' ? window.innerWidth : 1920
+)
+function handleResize() {
+  windowWidth.value = window.innerWidth
+}
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('resize', handleResize)
 })
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', handleResize)
 })
 </script>
 
