@@ -13,7 +13,7 @@
       <div class="hero__additional">
         <div class="hero__info-section">
           <h2 class="hero__info-title">АО «Штутгарт Амтомейшн»</h2>
-          <p class="hero__info-text">Инжиниринговая компании полного цикла</p>
+          <!-- <p class="hero__info-text">Инжиниринговая компании полного цикла</p>
 
           <p class="hero__info-text">
             Собственное производство контрольно-измерительных приборов
@@ -21,7 +21,7 @@
 
           <p class="hero__info-text">
             Комплексная реализация проектов автоматизации
-          </p>
+          </p> -->
         </div>
         <div class="hero__image-section">
           <img class="hero__img" src="/img/contacts-hero.webp" alt="Контакты" />
@@ -445,7 +445,6 @@ const breadcrumbs = computed(() => {
   }
 
   &__info-title {
-    margin-bottom: 22px;
     color: #000;
     font-family: 'Stetica';
     font-size: 32px;
