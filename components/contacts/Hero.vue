@@ -186,7 +186,7 @@ const breadcrumbs = computed(() => {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    padding-top: 150px;
+    padding-top: 83px;
     @media screen and (max-width: 1299px) {
       padding-top: 100px;
     }
@@ -409,8 +409,8 @@ const breadcrumbs = computed(() => {
 
   &__additional {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+
+    gap: 30px;
     align-items: center;
 
     @media screen and (max-width: 1024px) {
@@ -420,6 +420,9 @@ const breadcrumbs = computed(() => {
   }
 
   &__image-section {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
     @media screen and (max-width: 1024px) {
       order: 2;
     }
