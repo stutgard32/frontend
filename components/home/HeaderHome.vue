@@ -110,6 +110,7 @@ import HeaderCatalogDropdown from '~/components/header/CatalogDropdown.vue'
 import AboutDropdown from '~/components/header/AboutDropdown.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 const openMenu = ref(false)
+
 const activeMenu = () => {
   openMenu.value = !openMenu.value
 }
