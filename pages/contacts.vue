@@ -2,7 +2,6 @@
   <section class="contacts">
     <ContactsHero />
     <ContactsMap />
-    <ContactsForm />
   </section>
 </template>
 

@@ -39,7 +39,6 @@ const onSubmit = async () => {
 
 <style scoped lang="scss">
 .form {
-  padding-bottom: 50px;
   &__title {
     color: #000;
     text-align: center;

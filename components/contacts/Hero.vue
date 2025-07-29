@@ -13,6 +13,7 @@
       <div class="hero__additional">
         <div class="hero__info-section">
           <h2 class="hero__info-title">АО «Штутгарт Амтомейшн»</h2>
+          <ContactsForm />
           <!-- <p class="hero__info-text">Инжиниринговая компании полного цикла</p>
 
           <p class="hero__info-text">
@@ -23,9 +24,9 @@
             Комплексная реализация проектов автоматизации
           </p> -->
         </div>
-        <div class="hero__image-section">
+        <!-- <div class="hero__image-section">
           <img class="hero__img" src="/img/contacts-hero.webp" alt="Контакты" />
-        </div>
+        </div> -->
       </div>
       <div class="hero__cards-container">
         <div class="hero__card hero__card--primary">
@@ -68,16 +69,20 @@
               <span class="hero__link-label">Email</span>
               <span class="hero__link-value">info@st-av.ru</span>
             </a>
-            <div class="hero__company-info">
+            <!-- <div class="hero__company-info">
               <span class="hero__inn">ИНН 1661070513</span>
-            </div>
+            </div> -->
           </div>
         </div>
 
         <div class="hero__card hero__card--accent">
           <div class="hero__card-header">
             <div class="hero__icon-wrapper">
-              <div class="hero__time-icon">⏰</div>
+              <img
+                class="hero__icon"
+                src="/img/addrs1.png"
+                alt="Режим работы"
+              />
             </div>
             <h3 class="hero__card-title">Режим работы</h3>
           </div>
@@ -448,6 +453,7 @@ const breadcrumbs = computed(() => {
   }
 
   &__info-title {
+    margin-bottom: 32px;
     color: #000;
     font-family: 'Stetica';
     font-size: 32px;
