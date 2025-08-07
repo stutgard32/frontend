@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="item">
     <img class="item__img" :src="img" alt="img" />
     <div class="item__wrap">
-      <h1 class="item__title">{{ title }}</h1>
-      <span class="item__date">{{ formattedDate }}</span>
+      <div class="item__content">
+        <h1 class="item__title">{{ title }}</h1>
+        <span class="item__date">{{ formattedDate }}</span>
+      </div>
       <NuxtLink class="item__link" :to="`/news/${link}`">Подробнее</NuxtLink>
     </div>
   </div>
@@ -28,6 +30,10 @@ const formattedDate = computed(() => {
 
 <style lang="scss" scoped>
 .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   &__title {
     padding: 0 15px;
     color: #000;
@@ -45,9 +51,9 @@ const formattedDate = computed(() => {
   &__img {
     margin-bottom: 20px;
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
-    max-height: 334px;
+    object-position: center;
   }
   &__date {
     display: block;
@@ -63,6 +69,14 @@ const formattedDate = computed(() => {
     letter-spacing: -0.48px;
   }
   &__wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 15px;
+  }
+
+  &__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 15px;
