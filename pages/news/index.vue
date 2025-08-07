@@ -17,7 +17,7 @@ import type { News } from '~/types/types'
 const listNews = await useLoadData<'', News[]>(apiNews, {
   query: {
     populate: ['*'],
-    'sort[0]': 'createdAt:asc',
+    'sort[0]': 'createdAt:desc',
   },
 })
 
